@@ -1,8 +1,6 @@
-# Enumeration
+# TCP
 
-## TCP
-
-### 22 - SSH
+## 22 - SSH
 - **ssh-audit**
     ```bash
     ssh-audit.py $IP_ADDRESS
@@ -25,7 +23,7 @@
     <insert hydra output here>
     ```
 
-### 25 - SMTP
+## 25 - SMTP
 - **Nmap SMTP Script Scan**
     ```bash
     nmap -p 25 --script smtp* $IP_ADDRESS
@@ -48,7 +46,7 @@
     VRFY <email_address>
     ```
 
-### 80 - HTTP
+## 80 - HTTP
 - **Nikto**
     ```bash
     nikto -h http://$IP_ADDRESS
@@ -100,7 +98,7 @@
     <insert page source here>
     ```
 
-### 139/445 - NetBIOS/SMB
+## 139/445 - NetBIOS/SMB
 - **Enum4Linux (SMB Enumeration)**
     ```bash
     enum4linux -a $IP_ADDRESS
@@ -116,7 +114,7 @@
     <insert smbclient output here>
     ```
 
-### 3389 - RDP
+## 3389 - RDP
 - **Hydra (RDP Brute Force)**
     ```bash
     hydra -l $USERNAME -P /usr/share/wordlists/rockyou.txt rdp://$IP_ADDRESS:$PORT -t 4 -V
@@ -139,7 +137,7 @@
     <insert rdp session output here>
     ```
 
-### 53 - DNS
+## 53 - DNS
 - **DNS Zone Transfer (AXFR)**
     ```bash
     dig @<DNS_SERVER> $DOMAIN_NAME axfr
@@ -153,49 +151,4 @@
     ```
     ```bash
     <insert dnsrecon output here>
-    ```
-
-## UDP
-
-### 25 - SNMP
-- **onesixtyone (SNMP Enumeration)**
-    ```bash
-    onesixtyone -c community.txt $IP_ADDRESS
-    ```
-    ```bash
-    <insert onesixtyone output here>
-    ```
-- **snmpwalk (SNMP Walk)**
-    ```bash
-    snmpwalk -v 2c -c public $IP_ADDRESS
-    ```
-    ```bash
-    <insert snmpwalk output here>
-    ```
-
-### 161 - SNMP (Advanced Enumeration)
-- **snmpenum**
-    ```bash
-    snmpenum -v 2c -c public $IP_ADDRESS
-    ```
-    ```bash
-    <insert snmpenum output here>
-    ```
-
-### 161/162 - SNMP Trap
-- **SnmpTrap (Listen for SNMP Traps)**
-    ```bash
-    snmptrapd -f -Lo
-    ```
-    ```bash
-    <insert snmptrap output here>
-    ```
-
-### 123 - NTP
-- **NTP Enumeration**
-    ```bash
-    ntpdc -c sysinfo $IP_ADDRESS
-    ```
-    ```bash
-    <insert ntpdc output here>
     ```
