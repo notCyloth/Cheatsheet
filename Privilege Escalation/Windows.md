@@ -72,7 +72,7 @@ whoami /groups
     ```batch
     <insert output here>
     ```
-        ```batch
+    ```batch
     netstat -ano
     ```
     ```batch
