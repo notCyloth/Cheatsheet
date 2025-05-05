@@ -13,8 +13,8 @@ LLMNR is very lively when people are logging in etc.
 So we're going to try and connect to a share that doesn't exist, or isn't valid. Responder is going to give us a hash that we can potentially crack. 
 
 ### How to use responder:
-```
-sudo responder -I eht0 -dwP 
+```bash
+sudo responder -I eth0 -dwP 
 ```
 
 -d : dhcp requests
