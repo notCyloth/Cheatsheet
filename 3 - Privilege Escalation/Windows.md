@@ -92,13 +92,13 @@ whoami /groups
     <insert output here>
     ```
     ```batch
-    dir C:\Program Files
+    dir "C:\Program Files"
     ```
     ```batch
     <insert output here>
     ```
     ```batch
-    dir C:\Program Files (x86)
+    dir "C:\Program Files (x86)"
     ```
     ```batch
     <insert output here>
