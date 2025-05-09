@@ -16,6 +16,7 @@ File > Import > From Folder of Markdown Files
 ![image](https://github.com/user-attachments/assets/997bd461-548a-4069-8907-bbc3f43bb8b6)
 
 Then select the "Cheatsheet" directory (or what you named the directory downloaded via git clone)
+
 ---
 Note: Commands that require additional knowledge/user input usually have a $VARIABLE in the command where it should be entered. For example:
 ```bash
