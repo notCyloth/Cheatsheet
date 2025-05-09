@@ -1,13 +1,13 @@
 # TCP
 
 ## 22 - SSH
-- **ssh-audit**
-    ```bash
-    ssh-audit.py $IP_ADDRESS
-    ```
-    ```bash
-    <insert ssh-audit output here>
-    ```
+### ssh-audit
+```bash
+ssh-audit.py $IP_ADDRESS
+```
+```
+<insert ssh-audit output here>
+```
 - **Hydra (Brute Force SSH Login)**
     ```bash
     hydra -l $USERNAME -P /usr/share/wordlists/rockyou.txt ssh://$IP_ADDRESS:$PORT -t 4 -V
