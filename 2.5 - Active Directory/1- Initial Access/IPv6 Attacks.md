@@ -1,5 +1,6 @@
 By default IPv4 and IPv6 are enabled on a network but only IPv4 is used and has a DNS Service.
 An attacker can spoof being an IPv6 DNS provider, allowing authentication to the Domain Controller via LDAP or SMB.
+
 ***THIS ATTACK CAN CAUSE NETWORK OUTAGES. ONLY PERFORM 5-10mins AT A TIME.***
 # How to do it
 ## Step 1:
