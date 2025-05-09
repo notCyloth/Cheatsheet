@@ -37,7 +37,9 @@ The PSExec script is very similar to the Sysinternals PsExec command.
 To execute psexec, we can enter impacket-psexec with two arguments. The first argument is -hashes, which allows us to use NTLM hashes to authenticate to the target. The format is "LMHash:NTHash", in which we specify the Administrator NTLM hash after the colon. Since we only use the NTLM hash, we can fill the LMHash section with 32 0's.
 The second argument is the target definition in the format "username@IP".
 At the end of the command we could specify another argument, which is used to determine which command psexec should execute on the target system. If we leave it empty, cmd.exe will be executed, providing us with an interactive shell.
+
 **PSExec gives you a SYSTEM shell. WMIexec gives you a shell of the user (in this case 'Administrator').**
+
 Example:
 ```bash
 impacket-psexec -hashes 00000000000000000000000000000000:7a38310ea6f0027ee955abed1762964b Administrator@192.168.50.212
