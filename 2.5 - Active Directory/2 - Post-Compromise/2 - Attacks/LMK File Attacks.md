@@ -12,7 +12,7 @@ $lnk.Description = "Test"
 $lnk.HotKey = "Ctrl+Alt+T"
 $lnk.Save()
 ```
-## Step 2
+## Step 2:
 Transfer the file onto the victim machine (if it wasn't created) and move it to a shared folder.
 ## Step 3: Run responder on attack machine.
 ```bash
