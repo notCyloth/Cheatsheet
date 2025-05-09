@@ -1,7 +1,5 @@
 # ssh-audit
-```bash
 ssh-audit.py $IP_ADDRESS
-```
 ```
 <insert ssh-audit output here>
 ```
