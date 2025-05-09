@@ -1,5 +1,5 @@
 # ssh-audit
-ssh-audit.py $IP_ADDRESS
+## ssh-audit.py $IP_ADDRESS
 ```
 <insert ssh-audit output here>
 ```
