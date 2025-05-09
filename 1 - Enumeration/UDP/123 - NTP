@@ -1,0 +1,7 @@
+# NTP Enumeration
+```bash
+ntpdc -c sysinfo $IP_ADDRESS
+```
+```
+<insert ntpdc output here>
+```
