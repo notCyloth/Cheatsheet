@@ -136,7 +136,7 @@ Get-ChildItem -Path $env:userprofile -Include *.txt,*.pdf,*.xls,*.doc,*.docx -Fi
 <insert output here>
 ```
 # No GUI?
-If a compromised user isn't part of "Remote Desktop Users" or "Remote Management Users", this means RDP access can't be gained.
+If a compromised user isn't part of "Remote Desktop Users" or "Remote Management Users", this means RDP access can't be gained as that user.
 
 Instead, use runas on an account with GUI access to run a cmd or powershell:
 ```powershell
