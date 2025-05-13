@@ -136,6 +136,21 @@ Also check other paths such as C:\, C:\Users.
 ```
 <insert output here>
 ```
+# Powershell Logs
+```powershell
+Get-History
+```
+```
+<insert output here>
+```
+```powershell
+(Get-PSReadlineOption).HistorySavePath
+```
+```
+File Location: <insert output here>
+
+<insert file contents here>
+```
 # No GUI?
 If a compromised user isn't part of "Remote Desktop Users" or "Remote Management Users", this means RDP access can't be gained as that user.
 
