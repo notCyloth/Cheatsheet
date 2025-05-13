@@ -114,21 +114,21 @@ Get-Process
 <insert output here>
 ```
 ### Enumerate filesystem for sensitive details
-#### Enumerate for password manager databases (i.e. .kbdx)
+Enumerate for password manager databases (i.e. .kbdx):
 ```powershell
 Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
 ```
 ```
 <insert output here>
 ```
-#### Enumerate application filesystem for interesting files (i.e. XAMPP)
+Enumerate application filesystem for interesting files (i.e. XAMPP):
 ```powershell
 Get-ChildItem -Path C:\xampp -Include *.txt,*.ini -File -Recurse -ErrorAction SilentlyContinue
 ```
 ```
 <insert output here>
 ```
-#### Enumerate home directory for interesting files
+Enumerate home directory for interesting files:
 ```powershell
 Get-ChildItem -Path $env:userprofile -Include *.txt,*.pdf,*.xls,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
 ```
