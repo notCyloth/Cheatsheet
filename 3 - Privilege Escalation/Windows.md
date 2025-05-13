@@ -132,7 +132,7 @@ Enumerate home directory for interesting files:
 ```powershell
 Get-ChildItem -Path $env:userprofile -Include *.txt,*.pdf,*.xls,*.doc,*.docx,*.ini -File -Recurse -ErrorAction SilentlyContinue
 ```
-Also check C:\, C:\Users.
+Also check other paths such as C:\, C:\Users.
 ```
 <insert output here>
 ```
