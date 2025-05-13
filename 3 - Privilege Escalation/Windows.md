@@ -102,7 +102,7 @@ dir "C:\Program Files (x86)"
 <insert output here>
 ```
 ```batch
-dir %USERPROFILE%\Downloads
+dir $env:userprofile\Downloads
 ```
 ```
 <insert output here>
