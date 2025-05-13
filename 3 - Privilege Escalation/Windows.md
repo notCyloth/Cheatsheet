@@ -128,17 +128,11 @@ Get-ChildItem -Path C:\xampp -Include *.txt,*.ini -File -Recurse -ErrorAction Si
 ```
 <insert output here>
 ```
-Enumerate all directories for interesting files:
-```powershell
-Get-ChildItem -Path C:\ -Include *.txt,*.pdf,*.xls,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
-```
-```
-<insert output here>
-```
 Enumerate home directory for interesting files:
 ```powershell
-Get-ChildItem -Path $env:userprofile -Include *.txt,*.pdf,*.xls,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
+Get-ChildItem -Path $env:userprofile -Include *.txt,*.pdf,*.xls,*.doc,*.docx,*.ini -File -Recurse -ErrorAction SilentlyContinue
 ```
+Also check C:\, C:\Users.
 ```
 <insert output here>
 ```
