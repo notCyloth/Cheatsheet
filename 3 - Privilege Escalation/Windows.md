@@ -155,10 +155,15 @@ File Location: <insert output here>
 1. Open Event Viewer.
 2. Windows Logs > Applications and Services Logs > Microsoft > Windows > PowerShell > Operational
 3. On the right hand pane, select the following:
+
 ![image](https://github.com/user-attachments/assets/8d95086d-93d9-4e9e-9142-ff8b1c7be51d)
-4. Add 4104 as the Event ID to filter:
+
+5. Add 4104 as the Event ID to filter:
+
 ![image](https://github.com/user-attachments/assets/dabce7a7-d406-47c3-9c02-2c57c0e481ad)
-5. Look for interesting commands or plaintext creds... For example:
+
+6. Look for interesting commands or plaintext creds... For example:
+
 ![image](https://github.com/user-attachments/assets/73336dbe-c73d-4831-a160-d808aab7db65)
  
 # No GUI?
