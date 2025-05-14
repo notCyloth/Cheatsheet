@@ -195,7 +195,7 @@ icacls returns the following values related to permissions:
 * R - Read-only access
 * W - Write-only access
 
-BUILTIN\Users or another group the compromised user is in must have (W), (M) or (F) permissions to overwrite the binary:
+BUILTIN\Users or another group the compromised user is in must have (W), (M) or (F) permissions to overwrite the binary (always worth checking if it has I perm too - it could have inherited the necessary perms from elsewhere):
 ```powershell
 icacls "C:\path\to\interesting\service.exe"
 ```
