@@ -28,7 +28,7 @@ Ingesters are used to gather details on the domain.
 ```bash
 mkdir bloodhound
 cd bloodhound
-sudo bloodhound-python -d $(DOMAIN) -u $(USERNAME) -p $(PASSWORD) -ns $(DC_IP_ADDRESS)-c all
+sudo bloodhound-python -d $(DOMAIN) -u $(USERNAME) -p $(PASSWORD) -ns $(DC_IP_ADDRESS) -c all
 ```
 On bloodhound, at the menu on the right hand side, select "Upload Data".
 Then, navigate to where the files were created and select them all.
