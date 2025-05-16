@@ -2,18 +2,13 @@
 ## Step 1:
 Make sure bloodhound is updated:
 ```bash
-sudo pip install bloodhound
+sudo apt install bloodhound
 ```
 ## Step 2:
-Start neo4j console:
-```bash
-sudo neo4j console
-```
-## Step 3:
 Go to the link provided:
 IMAGEGOESHERE
 If this is the first time, the credentials are neo4j:neo4j.
-## Step 4:
+## Step 3:
 Run bloodhound.
 ```bash
 bloodhound
