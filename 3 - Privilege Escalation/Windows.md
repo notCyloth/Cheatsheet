@@ -342,3 +342,9 @@ Get-ModifiableServiceFile
 ```
 <insert output here>
 ```
+```powershell
+Get-UnquotedService
+```
+```
+<insert output here>
+```
