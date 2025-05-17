@@ -20,12 +20,11 @@ i.e. The following example unqouted service path: C:\Program Files\My Program\My
 * C:\Program Files\My Program\My service\service.exe
 
 Thus the following folders need to be checked for (W) permissions:
-* C:\
 * C:\Program Files
 * C:\Program Files\My Program
 * C:\Program Files\My Program\My service
 ```batch
-icacls "C:\"
+icacls "C:\Path"
 ```
 # Craft and place malicious exe in service path
 Generate payload with msfvenom:
