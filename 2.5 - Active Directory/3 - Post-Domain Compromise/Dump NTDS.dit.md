@@ -15,7 +15,6 @@ Grab the NT to crack:
 * Copy all the NT hashes.
 * Create a file with all the hashes pasted.
 ```bash
-hashcat -m 1000 hashes.txt /usr/share/wordlists/rockyou.txt
 hashcat -m 1000 hashes.txt /usr/share/wordlists/rockyou.txt --show
 ```
 * Copy the output and paste it on a new excel sheet. 
