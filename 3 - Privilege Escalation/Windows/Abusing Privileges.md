@@ -8,7 +8,8 @@ whoami /priv
 * SeAssignPrimaryToken
 * SeLoadDriver
 * SeDebug
- In most configurations, IIS (Windows Webserver) will run as LocalService, LocalSystem, NetworkService, or ApplicationPoolIdentity, which all have SeImpersonatePrivilege assigned.
+
+In most configurations, IIS (Windows Webserver) will run as LocalService, LocalSystem, NetworkService, or ApplicationPoolIdentity, which all have SeImpersonatePrivilege assigned.
 
 This also applies to other Windows services.
 
