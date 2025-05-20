@@ -15,3 +15,8 @@ Get-ScheduledTask
 ```batch
 schtasks /query /fo LIST /v
 ```
+# Enumerate interesting Task Binaries
+```batch
+icacls C:\Path\To\Task\ToRun.exe
+```
+If there is F, W or those permissions are inherited, we can replace the exe with our own payload.
