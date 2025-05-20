@@ -7,7 +7,13 @@ whoami
 ```
 <insert hostname\username here>
 ```
-
+## Privileges of the current user
+```batch
+whoami /priv
+```
+```
+<insert privileges here>
+```
 ## Group memberships of the current user
 ```powershell
 whoami /groups
