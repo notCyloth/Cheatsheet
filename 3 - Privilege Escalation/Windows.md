@@ -64,6 +64,12 @@ systeminfo
 ```
 <insert output here>
 ```
+```powershell
+Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description -eq "Security Update" }
+```
+```
+<insert security patches here>
+```
 ### Network Information
 ```batch
 ipconfig /all
