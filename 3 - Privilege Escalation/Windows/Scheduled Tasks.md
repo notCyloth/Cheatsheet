@@ -9,3 +9,9 @@ If the trigger condition was met in the past, the task will not run again in the
 
 Programs and scripts specified by actions can be replaced with payloads or exploited.
 # Enumerate Scheduled Tasks
+```powershell
+Get-ScheduledTask
+```
+```batch
+schtasks /query /fo LIST /v
+```
