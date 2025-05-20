@@ -19,4 +19,4 @@ schtasks /query /fo LIST /v
 ```batch
 icacls C:\Path\To\Task\ToRun.exe
 ```
-If there is F, W or those permissions are inherited, we can replace the exe with our own payload.
+If there is F, W or those permissions are inherited (I), we can replace the exe with our own payload.
