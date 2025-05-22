@@ -58,6 +58,16 @@ Or
 routel
 ```
 ...depending on distro.
+```bash
+ss -anp
+```
+## Firewall Rules
+```bash
+ls /etc/iptables
+```
+```bash
+ls /etc | grep "ip"
+```
 # SUIDs
 ```bash
 find / -type f -perm /4000 2>/dev/null
