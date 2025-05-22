@@ -78,6 +78,9 @@ find / -type f -perm /4000 2>/dev/null
 
 # Cronjobs
 ```bash
+crontab -l
+```
+```bash
 cat /etc/crontab
 ```
 ```bash
