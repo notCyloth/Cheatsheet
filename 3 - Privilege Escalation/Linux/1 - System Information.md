@@ -46,7 +46,18 @@ sudo -l
 ```
 <insert sudo permissions here>
 ```
-
+# Network Information
+```bash
+ip a
+```
+```bash
+route
+```
+Or
+```bash
+routel
+```
+...depending on distro.
 # SUIDs
 ```bash
 find / -type f -perm /4000 2>/dev/null
