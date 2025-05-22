@@ -1,9 +1,8 @@
-# TO DO: Edit headings to be ## instead of \#
 Just use this: 
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
 
-# Operating system, version and architecture
+## Operating system, version and architecture
 ```bash
 cat /etc/issue
 ```
@@ -21,18 +20,18 @@ Display kernel driver info:
 ```bash
 /sbin/modinfo $(KERNEL_NAME)
 ```
-# Current User Groups
+## Current User Groups
 ```bash
 id
 ```
-# Services
+## Services
 ```bash
 ps aux
 ```
 ```
 <insert services here>
 ```
-# Users
+## Users
 ```bash
 cat /home
 ```
@@ -45,21 +44,28 @@ cat /etc/passwd
 ```
 <insert /etc/passwd here>
 ```
-# History
+## History
 ```bash
 cat ~/.bash_history
 ```
 ```
 <insert bash history here>
 ```
-# List Sudo Permissions
+## List Sudo Permissions
 ```bash
 sudo -l
 ```
 ```
 <insert sudo permissions here>
 ```
-# Network Information
+## Environment Variables
+```bash
+env
+```
+```bash
+cat .bashrc
+```
+## Network Information
 ```bash
 ip a
 ```
@@ -74,18 +80,18 @@ routel
 ```bash
 ss -anp
 ```
-## Firewall Rules
+### Firewall Rules
 ```bash
 ls /etc/iptables
 ```
 ```bash
 ls /etc | grep "ip"
 ```
-# SUIDs
+## SUIDs
 ```bash
 find / -perm -u=s -type f 2>/dev/null
 ```
-# Cronjobs
+## Cronjobs
 ```bash
 crontab -l
 ```
@@ -98,16 +104,16 @@ cat /etc/crontab
 ```bash
 ls -lah /etc/cron*
 ```
-# Enumerate installed packages
+## Enumerate installed packages
 Debian:
 ```bash
 dpkg -l
 ```
-# Every writeable directory by current user
+## Every writeable directory by current user
 ```bash
 find / -writable -type d 2>/dev/null
 ```
-# List mounted filesystems
+## List mounted filesystems
 List drives that will be mounted on boot:
 ```bash
 cat /etc/fstab
