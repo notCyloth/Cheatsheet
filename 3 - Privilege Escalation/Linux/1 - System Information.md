@@ -1,9 +1,12 @@
-# Kernel
+# Operating system, version and architecture
+```bash
+cat /etc/issue
+```
+```bash
+cat /etc/os-release
+```
 ```bash
 uname -r
-```
-```
-<insert kernel version here>
 ```
 # Current User Groups
 ```bash
