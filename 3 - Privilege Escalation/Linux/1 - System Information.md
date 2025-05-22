@@ -122,6 +122,10 @@ lsblk
 # Linpeas
 ```bash
 wget https://github.com/carlospolop/PEASS-ng/releases/download/2021.02.20/linpeas.sh
+```
+```bash
 chmod +x linpeas.sh
+```
+```bash
 ./linpeas.sh
 ```
