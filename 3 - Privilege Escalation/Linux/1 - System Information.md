@@ -80,16 +80,12 @@ find / -type f -perm /4000 2>/dev/null
 ```bash
 cat /etc/crontab
 ```
+```bash
+ls -lah /etc/cron*
 ```
-<insert cronjobs here>
-```
-
 # Linpeas
 ```bash
 wget https://github.com/carlospolop/PEASS-ng/releases/download/2021.02.20/linpeas.sh
 chmod +x linpeas.sh
 ./linpeas.sh
-```
-```
-<insert linpeas output here>
 ```
