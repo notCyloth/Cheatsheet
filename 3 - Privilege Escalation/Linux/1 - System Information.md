@@ -1,8 +1,9 @@
+# TO DO: Edit headings to be ## instead of #
 Just use this: 
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
 
-## Operating system, version and architecture
+# Operating system, version and architecture
 ```bash
 cat /etc/issue
 ```
