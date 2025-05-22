@@ -28,8 +28,8 @@ id
 ```bash
 ps aux
 ```
-```
-<insert services here>
+```bash
+watch -n 1 "ps -aux | grep pass"
 ```
 ## Users
 ```bash
