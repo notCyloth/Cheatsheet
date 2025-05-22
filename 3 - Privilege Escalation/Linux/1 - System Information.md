@@ -1,19 +1,21 @@
-# System Info
-## Kernel
+# Kernel
 ```bash
 uname -r
 ```
 ```
 <insert kernel version here>
 ```
-## Services
+# Services
 ```bash
 ps aux
 ```
 ```
 <insert services here>
 ```
-## Users
+# Users
+```bash
+id
+```
 ```bash
 cat /home
 ```
@@ -26,14 +28,14 @@ cat /etc/passwd
 ```
 <insert /etc/passwd here>
 ```
-## History
+# History
 ```bash
 cat ~/.bash_history
 ```
 ```
 <insert bash history here>
 ```
-## List Sudo Permissions
+# List Sudo Permissions
 ```bash
 sudo -l
 ```
@@ -41,7 +43,7 @@ sudo -l
 <insert sudo permissions here>
 ```
 
-## SUIDs
+# SUIDs
 ```bash
 find / -type f -perm /4000 2>/dev/null
 ```
@@ -49,7 +51,7 @@ find / -type f -perm /4000 2>/dev/null
 <insert suid files here>
 ```
 
-## Cronjobs
+# Cronjobs
 ```bash
 cat /etc/crontab
 ```
