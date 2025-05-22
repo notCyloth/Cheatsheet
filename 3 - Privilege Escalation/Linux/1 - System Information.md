@@ -78,10 +78,7 @@ ls /etc | grep "ip"
 ```
 # SUIDs
 ```bash
-find / -type f -perm /4000 2>/dev/null
-```
-```
-<insert suid files here>
+find / -perm -u=s -type f 2>/dev/null
 ```
 # Cronjobs
 ```bash
