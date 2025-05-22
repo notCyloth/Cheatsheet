@@ -80,6 +80,9 @@ routel
 ```bash
 ss -anp
 ```
+```bash
+sudo tcpdump -i $(INTERFACE) -A | grep "pass"
+```
 ### Firewall Rules
 ```bash
 ls /etc/iptables
