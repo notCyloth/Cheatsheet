@@ -5,6 +5,10 @@ uname -r
 ```
 <insert kernel version here>
 ```
+# Current User Groups
+```bash
+id
+```
 # Services
 ```bash
 ps aux
@@ -13,9 +17,6 @@ ps aux
 <insert services here>
 ```
 # Users
-```bash
-id
-```
 ```bash
 cat /home
 ```
