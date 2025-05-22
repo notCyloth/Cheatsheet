@@ -8,6 +8,14 @@ cat /etc/os-release
 ```bash
 uname -r
 ```
+List loaded kernel drivers:
+```bash
+lsmod
+```
+Display kernel driver info:
+```bash
+/sbin/modinfo $(KERNEL_NAME)
+```
 # Current User Groups
 ```bash
 id
@@ -75,7 +83,6 @@ find / -type f -perm /4000 2>/dev/null
 ```
 <insert suid files here>
 ```
-
 # Cronjobs
 ```bash
 crontab -l
@@ -88,6 +95,28 @@ cat /etc/crontab
 ```
 ```bash
 ls -lah /etc/cron*
+```
+# Enumerate installed packages
+Debian:
+```bash
+dpkg -l
+```
+# Every writeable directory by current user
+```bash
+find / -writable -type d 2>/dev/null
+```
+# List mounted filesystems
+List drives that will be mounted on boot:
+```bash
+cat /etc/fstab
+```
+List all mounted filesystems:
+```bash
+mount
+```
+List all available disks:
+```bash
+lsblk
 ```
 # Linpeas
 ```bash
