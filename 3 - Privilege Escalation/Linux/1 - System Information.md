@@ -81,6 +81,9 @@ find / -type f -perm /4000 2>/dev/null
 crontab -l
 ```
 ```bash
+sudo crontab -l
+```
+```bash
 cat /etc/crontab
 ```
 ```bash
