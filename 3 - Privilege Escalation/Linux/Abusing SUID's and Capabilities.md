@@ -15,3 +15,9 @@ Pay particular attention to cap_setuid+ep perms.
 +ep = effective and permitted
 # Exploiting SUID's or Capabilities
 https://gtfobins.github.io/
+# PwnKit
+If pkexec is < version 0.120, it is vulnerable to pwnkit.
+```bash
+pkexec --version
+```
+https://github.com/arthepsy/CVE-2021-4034
