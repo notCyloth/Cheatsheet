@@ -15,7 +15,7 @@ locate password
 ```bash
 locate pass
 ```
-# Search8ing for SSH keys
+# Searching for SSH keys
 ```bash
 find / -name authorized_keys 2>/dev/null
 ```
