@@ -10,5 +10,7 @@ find / -perm -u=s -type f 2>/dev/null
 ```bash
 /usr/sbin/getcap -r / 2>/dev/null
 ```
+Pay particular attention to cap_setuid+ep perms. 
++ep = effective and permitted
 # Exploiting SUID's or Capabilities
 https://gtfobins.github.io/
