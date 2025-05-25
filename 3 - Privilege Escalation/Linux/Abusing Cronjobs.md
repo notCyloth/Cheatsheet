@@ -2,6 +2,22 @@ On a Linux system, the cron time-based job scheduler is a prime target, since sy
 
 # Enumeration
 ```bash
+crontab -l
+```
+```bash
+sudo crontab -l
+```
+```bash
+cat /etc/crontab
+```
+```bash
+ls -lah /etc/cron*
+```
+Look for cron specific logs:
+```bash
+ls /var/log
+```
+```bash
 grep "CRON" /var/log/syslog
 ```
 Example vulnerable log showing root running a script in a user writeable directory:
