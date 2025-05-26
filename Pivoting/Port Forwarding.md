@@ -123,3 +123,20 @@ To be able to use any tool through this open port forward, proxychains will need
 sudo echo "socks5 127.0.0.1 9999" >> /etc/proxychains4.conf
 ```
 Lowering the tcp_read_time_out and tcp_connect_time_out values in the Proxychains configuration file will force Proxychains to time-out on non-responsive connections more quickly. This can dramatically speed up port-scanning times.
+# sshuttle
+Automates Dynamic Port Forwarding. Requires:
+* Root privileges on SSH Client.
+* Python3 on SSH Server.
+
+Run on jumpbox machine:
+```bash
+socat -ddd TCP-LISTEN:2222,fork TCP:$(IP_OF_TARGET):$(RPORT_OF_TARGET)
+```
+Run on attacker machine:
+```bash
+sshuttle -r $(SSH_USER)@$(JUMPBOX_IP):2222 $(IP_OF_TARGET_SUBNET)/24 $(IP_OF_TARGET_SUBNET)/24
+```
+Example:
+```bash
+sshuttle -r database_admin@192.168.50.63:2222 10.4.50.0/24 172.16.50.0/24
+```
