@@ -1,7 +1,9 @@
 Port Forwarding = Forwarding all traffic sent to that port to another destination (i.e. another port on another machine that isn't reachable from the attacker machine).
 
 # Using Socat
-Note: Socat usually isn't installed on victim machines but it's possible to download and run a statically linked binary version instead.
+Note: Simple port forwards like these are easy to detect with network monitoring tools. 
+
+Socat usually isn't installed on victim machines but it's possible to download and run a statically linked binary version instead.
 
 Socat binaries: https://github.com/3ndG4me/socat/releases
 
