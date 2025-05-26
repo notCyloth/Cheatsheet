@@ -45,3 +45,4 @@ Attacker machine can now access smb machine through confluence machine on port 4
 ```bash
 smbclient -p 4455 -L //192.168.50.63/ -U hr_admin --password=Welcome1234
 ```
+## Remote Port Forwarding
