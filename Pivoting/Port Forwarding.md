@@ -21,7 +21,7 @@ Attacking machine wants to access port 5432 on a postgresql server, but that ser
 ```bash
 socat -ddd TCP-LISTEN:2345,fork TCP:10.4.50.215:5432
 ```
-Now the attacker machine can access postgresql through the jumpbox machine on port 2345.
+Now the attacker machine can access postgresql through the jumpbox machine on port 2345:
 ```bash
 psql -h 192.168.50.63 -p 2345 -U postgres
 ```
