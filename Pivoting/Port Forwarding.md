@@ -30,6 +30,7 @@ Most SSH tunnelling requires a tty shell, if it's not - then do this:
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
+To connect back to the Kali SSH server using a username and password you may have to explicity allow password-based authentication by setting PasswordAuthentication to yes in /etc/ssh/sshd_config.
 ## Local Port Forwarding
 Forwards one port to another port of another machine.
 ```bash
