@@ -79,5 +79,5 @@ echo "socks5 192.168.50.63 9999" >> /etc/proxychains4.conf
 ```
 Run commands to access different ports on the smb machine from attacker machine:
 ```bash
-sudo proxychains nmap -vvv -sT --top-ports=20 -Pn 172.16.50.217
+sudo proxychains4 nmap -vvv -sT --top-ports=20 -Pn 172.16.50.217
 ```
