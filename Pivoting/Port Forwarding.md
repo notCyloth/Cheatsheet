@@ -9,7 +9,8 @@ Once socat is installed on the victim machine (i.e. the jumpbox between the targ
 ```bash
 socat -ddd TCP-LISTEN:$(LPORT_OF_JUMPBOX),fork TCP:$(IP_OF_TARGET):$(RPORT_OF_TARGET)
 ```
-Example: There are 3 machines.
+## Example
+There are 3 machines.
 * Attacker machine can reach "jumpbox" but not "postgresql".
 * Jumpbox machine that has been compromised by attacker. Can reach attacker AND postgresql.
 * Postgresql machine. Port 5432 is open but only accesible to Jumpbox. IP=10.4.50.215.
