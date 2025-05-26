@@ -62,6 +62,7 @@ To be able to use any tool through this open port forward, proxychains will need
 ```bash
 echo "socks5 $(JUMPBOX_IP) 9999" >> /etc/proxychains4.conf
 ```
+Lowering the tcp_read_time_out and tcp_connect_time_out values in the Proxychains configuration file will force Proxychains to time-out on non-responsive connections more quickly. This can dramatically speed up port-scanning times.
 ### Example
 There are 4 machines.
 * Attacker machine can reach "confluence" machine.
