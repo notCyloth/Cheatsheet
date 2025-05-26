@@ -26,7 +26,12 @@ Now the attacker machine can access postgresql through the jumpbox machine on po
 psql -h 192.168.50.63 -p 2345 -U postgres
 ```
 # SSH Tunelling/Port Forwarding
+Most SSH tunnelling requires a tty shell, if it's not - then do this:
+```bash
+python3 -c 'import pty; pty.spawn("/bin/sh")'
+```
 ## Local Port Forwarding
+Forwards one port to another port of another machine.
 ```bash
 ssh -N -L 0.0.0.0:$(LPORT_OF_LISTENER):$(IP_OF_TARGET):$(RPORT_OF_TARGET) $(SSH_USER)@$(IP_OF_JUMPBOX)
 ```
@@ -46,3 +51,33 @@ Attacker machine can now access smb machine through confluence machine on port 4
 smbclient -p 4455 -L //192.168.50.63/ -U hr_admin --password=Welcome1234
 ```
 ## Dynamic Port Forwarding
+Forwards traffic received on one port to access everything visible on another machine.
+
+Run on the jumpbox:
+```bash
+ssh -N -D 0.0.0.0:9999 $(SSH_USER)@$(IP_OF_TARGET)
+```
+### Proxychains
+To be able to use any tool through this open port forward, proxychains will need to be configured.
+```bash
+echo "socks5 $(JUMPBOX_IP) 9999" >> /etc/proxychains4.conf
+```
+### Example
+There are 4 machines.
+* Attacker machine can reach "confluence" machine.
+* Confluence machine can reach "database" machine and attacker machine. IP=192.168.50.63
+* Database machine can reach "SMB" machine and confluence machine. IP=10.4.50.215
+* SMB machine can reach database machine. IP=172.16.50.217
+
+Run this on the confluence machine to make all machines "database" can see reachable via 9999:
+```bash
+ssh -N -D 0.0.0.0:9999 database_admin@10.4.50.215
+```
+Edit the proxychains config on attacker machine:
+```bash
+echo "socks5 192.168.50.63 9999" >> /etc/proxychains4.conf
+```
+Run commands to access different ports on the smb machine from attacker machine:
+```bash
+sudo proxychains nmap -vvv -sT --top-ports=20 -Pn 172.16.50.217
+```
