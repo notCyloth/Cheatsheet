@@ -35,3 +35,12 @@ REMEMBER TO ADD TO /etc/proxychains4.conf:
 ```
 socks5 127.0.0.1 1080
 ```
+# DNS Tunneling
+DPI probably lets DNS through...
+
+Requirements:
+* Registered Domain
+* Setting up the Authoritative Name Server
+* Told the domain registrar that this server should be known as the authoritative name server for the registered domain zone.
+## dnscat2
+
