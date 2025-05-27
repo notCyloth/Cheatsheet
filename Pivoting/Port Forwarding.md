@@ -175,3 +175,24 @@ We can now do RDP to the target through port 80 on the target machine (bound to 
 ```
 xfreerdp /u:$(USERNAME) /p:$(PASSWORD) /v:127.0.0.1:9833
 ```
+## Netsh
+Native but requires Admin privileges.
+* "EXTERNAL_IP" is the IP of the compromised machine accessible to the attacker.
+* "INTERNAL_IP" is the IP of the machine unreachable to the attacker.
+This command will connect port 2222 of the comrpomised machine to port 22 of the internal machine (in this case, allowing SSH):
+```batch
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=$(EXTERNAL_IP) connectport=22 connectaddress=$(INTERNAL_IP)
+```
+Remember to delete port forwards when finished:
+```batch
+netsh interface portproxy del v4tov4 listenport=2222 listenaddress=$(EXTERNAL_IP)
+```
+### Poking holes in Firewalls
+Example to create rule named "port_forward_ssh_2222" that allows traffic into port 2222.
+```batch
+netsh advfirewall firewall add rule name="port_forward_ssh_2222" protocol=TCP dir=in localip=$(LOCAL_IP) localport=2222 action=allow
+```
+Remember to delete firewall rules when done:
+```batch
+netsh advfirewall firewall delete rule name="port_forward_ssh_2222"
+```
