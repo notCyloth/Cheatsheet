@@ -120,7 +120,7 @@ ssh -N -R 9998 kali@$(ATTACKER_IP)
 ### Proxychains
 To be able to use any tool through this open port forward, proxychains will need to be configured.
 ```bash
-sudo echo "socks5 127.0.0.1 9999" >> /etc/proxychains4.conf
+sudo echo "socks5 127.0.0.1 9998" >> /etc/proxychains4.conf
 ```
 Lowering the tcp_read_time_out and tcp_connect_time_out values in the Proxychains configuration file will force Proxychains to time-out on non-responsive connections more quickly. This can dramatically speed up port-scanning times.
 # sshuttle
