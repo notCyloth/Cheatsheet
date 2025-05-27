@@ -157,3 +157,6 @@ On the Windows jumpbox:
 ```bash
 ssh -N -R 9998 kali@$(IP_ADDRESS)
 ```
+## Plink
+CLI version of Putty.
+
