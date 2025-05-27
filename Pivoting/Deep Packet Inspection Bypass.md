@@ -31,3 +31,7 @@ Victim machine:
 ```bash
 ssh -o ProxyCommand='ncat --proxy-type socks5 --proxy 127.0.0.1:1080 %h %p' $(SSH_USER)@$(REMOTE_IP)
 ```
+REMEMBER TO ADD TO /etc/proxychains4.conf:
+```
+socks5 127.0.0.1 1080
+```
