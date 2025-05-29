@@ -15,3 +15,9 @@ $DN = ([adsi]'').distinguishedName
 $LDAP = "LDAP://$PDC/$DN"
 $LDAP
 ```
+```powershell
+powershell -ep bypass
+```
+```powershell
+.\enumeration.ps1
+```
