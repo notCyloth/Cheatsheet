@@ -1,23 +1,41 @@
 Powershell script to dynamically enumerate the LDAP path of a domain with low privileges:
 ```powershell
-# Store the domain object in the $domainObj variable
-$domainObj = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
+function LDAPSearch {
+    param (
+        [string]$LDAPQuery
+    )
 
-# Store the PdcRoleOwner name to the $PDC variable
-$PDC = $domainObj.PdcRoleOwner.Name
+    $PDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
+    $DistinguishedName = ([adsi]'').distinguishedName
 
-# Store the Distinguished Name variable into the $DN variable
-$DN = ([adsi]'').distinguishedName
+    $DirectoryEntry = New-Object System.DirectoryServices.DirectoryEntry("LDAP://$PDC/$DistinguishedName")
 
-# Create the full LDAP path required for enumeration
-$PDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
-$DN = ([adsi]'').distinguishedName 
-$LDAP = "LDAP://$PDC/$DN"
-$LDAP
+    $DirectorySearcher = New-Object System.DirectoryServices.DirectorySearcher($DirectoryEntry, $LDAPQuery)
+
+    return $DirectorySearcher.FindAll()
+
+}
 ```
 ```powershell
 powershell -ep bypass
 ```
 ```powershell
-.\enumeration.ps1
+Import-Module .\function.ps1
+```
+## Search all users:
+```powershell
+LDAPSearch -LDAPQuery "(samAccountType=805306368)"
+```
+## Search all groups:
+```powershell
+foreach ($group in $(LDAPSearch -LDAPQuery "(objectCategory=group)")) {
+$group.properties | select {$_.cn}, {$_.member}
+}
+```
+## Example enumerate a specific group:
+```powershell
+$sales = LDAPSearch -LDAPQuery "(&(objectCategory=group)(cn=Sales Department))"
+```
+```powershell
+$sales.properties.member
 ```
