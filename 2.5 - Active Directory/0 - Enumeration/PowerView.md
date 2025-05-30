@@ -1,4 +1,4 @@
-https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1
+Transfer powerview to target: https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1
 ```powershell
 powershell -ep bypass
 ```
