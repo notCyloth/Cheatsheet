@@ -36,5 +36,5 @@ Get-NetGroup "Sales Department" | select member
 Get-NetComputer
 ```
 ```powershell
-Get-NetComputer | select operatingsystem,dnshostname
+Get-NetComputer | select dnshostname,operatingsystem
 ```
