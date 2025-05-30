@@ -38,7 +38,7 @@ Access Control Entries associated with objects defines whether access to the spe
 * AllExtendedRights: Change password, reset password, etc.
 * ForceChangePassword: Password change for object
 * Self (Self-Membership): Add ourselves to for example a group
-Powerview:
+## Powerview:
 ```powershell
 Get-ObjectAcl -Identity stephanie
 ```
