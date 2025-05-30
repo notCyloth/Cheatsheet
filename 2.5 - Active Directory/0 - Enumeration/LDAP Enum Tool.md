@@ -33,7 +33,7 @@ foreach ($group in $(LDAPSearch -LDAPQuery "(objectCategory=group)")) {
 $group.properties | select {$_.cn}, {$_.member}
 }
 ```
-## Example enumerate a specific group:
+## Enumerate a specific group:
 ```powershell
 $sales = LDAPSearch -LDAPQuery "(&(objectCategory=group)(cn=Sales Department))"
 ```
