@@ -27,6 +27,17 @@ Import-Module .\function.ps1
 ```powershell
 LDAPSearch -LDAPQuery "(samAccountType=805306368)"
 ```
+## Enumerate a specific user:
+```powershell
+$user = LDAPSearch -LDAPQuery "(&(objectCategory=user)(cn=michelle))"
+```
+```powershell
+$user
+```
+### Enumerate individual attributes of user
+```powershell
+$user.properties.description
+```
 ## Search all groups:
 ```powershell
 foreach ($group in $(LDAPSearch -LDAPQuery "(objectCategory=group)")) {
