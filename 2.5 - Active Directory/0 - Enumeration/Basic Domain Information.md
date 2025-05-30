@@ -14,3 +14,18 @@ Enumerate specific groups:
 ```batch
 net group "$(GROUP_NAME)" /domain
 ```
+# Enumerate SPN's
+When applications like Exchange, MS SQL, or Internet Information Services (IIS) are integrated into AD, a unique service instance identifier known as Service Principal Name (SPN) associates a service to a specific service account in Active Directory.
+## setspn.exe
+Installed on windows by default.
+```batch
+setspn -L $(SPN_Account)
+```
+## Powerview
+```powershell
+Get-NetUser -SPN | select samaccountname,serviceprincipalname
+```
+## nslookup
+```batch
+nslookup.exe web04.corp.com
+```
