@@ -5,11 +5,11 @@ powershell -ep bypass
 ```powershell
 Import-Module .\PowerView.ps1
 ```
-## Basic Enumeration
+# Basic Enumeration
 ```powershell
 Get-NetDomain
 ```
-### Get users on domain
+## Get users on domain
 ```powershell
 Get-NetUser
 ```
@@ -19,15 +19,22 @@ Get-NetUser | select cn
 ```powershell
 Get-NetUser | select cn,pwdlastset,lastlogon
 ```
-#### Get specific user details
+### Get specific user details
 ```powershell
 Get-NetUser fred
 ```
-### Get groups on domain
+## Get groups on domain
 ```powershell
 Get-NetGroup | select cn
 ```
-#### Get specific group members
+### Get specific group members
 ```powershell
 Get-NetGroup "Sales Department" | select member
+```
+## Enumerate OS
+```powershell
+Get-NetComputer
+```
+```powershell
+Get-NetComputer | select operatingsystem,dnshostname
 ```
