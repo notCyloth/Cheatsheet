@@ -1,3 +1,4 @@
+### Note: Remember to enumerate nested groups (i.e. groups within groups!).
 Powershell script to dynamically enumerate the LDAP path of a domain with low privileges:
 ```powershell
 function LDAPSearch {
