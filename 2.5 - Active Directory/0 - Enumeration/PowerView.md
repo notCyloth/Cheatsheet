@@ -19,6 +19,10 @@ Get-NetUser | select cn
 ```powershell
 Get-NetUser | select cn,pwdlastset,lastlogon
 ```
+#### Get specific user details
+```powershell
+Get-NetUser fred
+```
 ### Get groups on domain
 ```powershell
 Get-NetGroup | select cn
