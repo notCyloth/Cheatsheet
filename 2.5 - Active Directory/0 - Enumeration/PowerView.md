@@ -36,5 +36,19 @@ Get-NetGroup "Sales Department" | select member
 Get-NetComputer
 ```
 ```powershell
-Get-NetComputer | select dnshostname,operatingsystem
+Get-NetComputer | select name,dnshostname,operatingsystem,operatingsystemversion
+```
+## Enumerate User Permissions
+Check user to see if they have admin privileges on any domain machines:
+```powershell
+Find-LocalAdminAccess
+```
+## Enumerate Logged on Users
+This will check a computer to see if there are any users currently logged in. Due to windows changing how to handles sessions, the API's running behind the hood may require admin:
+```powershell
+Get-NetSession -ComputerName files04 -Verbose
+```
+Alternatively, use sysinternals such as PsLoggedOn:
+```powershell
+.\PsLoggedon.exe \\client74
 ```
