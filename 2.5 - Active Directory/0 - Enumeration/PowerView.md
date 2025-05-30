@@ -31,7 +31,7 @@ Get-NetGroup | select cn
 ```powershell
 Get-NetGroup "Sales Department" | select member
 ```
-## Enumerate OS
+## Enumerate OS of all domain-joined machines
 ```powershell
 Get-NetComputer
 ```
