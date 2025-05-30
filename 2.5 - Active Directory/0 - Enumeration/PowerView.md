@@ -48,7 +48,7 @@ This will check a computer to see if there are any users currently logged in. Du
 ```powershell
 Get-NetSession -ComputerName files04 -Verbose
 ```
-Alternatively, use sysinternals such as PsLoggedOn:
+Alternatively, use sysinternals tool PsLoggedOn (https://learn.microsoft.com/en-us/sysinternals/downloads/psloggedon):
 ```powershell
 .\PsLoggedon.exe \\client74
 ```
