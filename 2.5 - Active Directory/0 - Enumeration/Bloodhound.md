@@ -21,7 +21,7 @@ Import-Module .\SharpHound.ps1
 Get-Help Invoke-BloodHound
 ```
 ```powershell
-Invoke-BloodHound -CollectionMethod All -OutputDirectory $(PATH_TO_CURRENT_DIRECTORY) -OutputPrefix "$(OUTPUT_FILENAME)"
+Invoke-BloodHound -CollectionMethod All -OutputDirectory "$(PATH_TO_CURRENT_DIRECTORY)" -OutputPrefix "$(OUTPUT_FILENAME)"
 ```
 ## Bloodhound-Python
 ```bash
