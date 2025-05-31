@@ -88,7 +88,10 @@ Find-DomainShare
 ```
 If files are shown, they can be viewed:
 ```powershell
-ls \\dc1.corp.com\sysvol\corp.com\
+ls "\\dc1.corp.com\sysvol\corp.com\"
+```
+```powershell
+cat "\\dc1.corp.com\sysvol\corp.com\file.txt"
 ```
 Look for domain policy files! They store local admin passwords and can be decrypted:
 ```powershell
