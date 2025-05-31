@@ -29,20 +29,3 @@ Get-NetUser -SPN | select samaccountname,serviceprincipalname
 ```batch
 nslookup.exe web04.corp.com
 ```
-# Enumerate ACE's
-Access Control Entries associated with objects defines whether access to the specific object is allowed or denied.
-* GenericAll: Full permissions on object
-* GenericWrite: Edit certain attributes on the object
-* WriteOwner: Change ownership of the object
-* WriteDACL: Edit ACE's applied to object
-* AllExtendedRights: Change password, reset password, etc.
-* ForceChangePassword: Password change for object
-* Self (Self-Membership): Add ourselves to for example a group
-## Powerview:
-```powershell
-Get-ObjectAcl -Identity stephanie
-```
-Note the "ObjectSID" and "SecurityIdentifier" of the output then run the following on the SIDs:
-```powershell
-Convert-SidToName S-1-5-21-1987370270-658905905-1781884369-1104
-```
