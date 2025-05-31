@@ -29,7 +29,7 @@ sudo neo4j start
 Note the link:
 ![image](https://github.com/user-attachments/assets/f775144d-ddcc-4a2b-8e1e-62e17eb024ac)
 
-Log in with default credentials (neo4j/neo4j) and change the password when prompted (I usually do neo4j124).
+Log in with default credentials (neo4j/neo4j) and change the password when prompted (REMEMBER THE CREDS - I usually do neo4j124).
 ```bash
 bloodhound
 ```
