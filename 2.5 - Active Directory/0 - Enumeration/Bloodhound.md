@@ -29,7 +29,12 @@ sudo neo4j start
 Note the link:
 ![image](https://github.com/user-attachments/assets/f775144d-ddcc-4a2b-8e1e-62e17eb024ac)
 
-Log in with default credentials (neo4j/neo4j) and change the password when prompted (REMEMBER THE CREDS - I usually do neo4j124).
+Log in with default credentials (neo4j/neo4j) and change the password when prompted (REMEMBER THE CREDS - I usually do neo4j1).
 ```bash
 bloodhound
 ```
+On bloodhound, at the menu on the right hand side, select "Upload Data".
+
+Then, navigate to where the files were created and select them all.
+## Analysis
+Click the Hamburger menu at the top left. This presents the Database Info as shown below
