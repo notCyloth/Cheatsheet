@@ -39,10 +39,9 @@ Then, navigate to where the files were created and select them all.
 
 Finally, click Settings (represented as two cogs) on the right side of the interface and setting Node Label Display to Always Display.
 ## Analysis
-Click the Hamburger menu at the top left. This presents the Database Info.
-
-Click "Find All Domain Admins".
-
-Clicking "Find Shortest Paths to Domain Admins" is also a good analysis check. Right clicking any connection between nodes and clicking "Help" will show more details 
-
-Objects can be right clicked and "Mark x as Owned" selected. This allows use to mark which objects/users are owned. There is another analysis option "Shortest Paths to Domain Admins from Owned Principals" that is useful as it shows how to get to Domain Admin based on what we have owned.
+Useful Options:
+* Click the Hamburger menu at the top left. This presents the Database Info.
+* Click "Find All Domain Admins".
+* Click "Find Shortest Paths to Domain Admins". Right clicking any connection between nodes and clicking "Help" will show more details 
+* Objects can be right clicked and "Mark x as Owned" selected. This allows use to mark which objects/users are owned.
+* "Shortest Paths to Domain Admins from Owned Principals" option is useful as it shows how to get to Domain Admin based on what we have marked as owned.
