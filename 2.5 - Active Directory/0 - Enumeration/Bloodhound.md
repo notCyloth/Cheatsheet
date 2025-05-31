@@ -43,7 +43,7 @@ On bloodhound, at the menu on the right hand side, select "Upload Data".
 
 Then, navigate to where the files were created and select them all.
 
-Finally, click Settings (represented as two cogs) on the right side of the interface and setting Node Label Display to Always Display.
+Finally, click Settings (represented as two cogs) on the right side of the interface and setting Node/Edge Label Display to Always Display.
 ## Analysis
 Useful Options:
 * Click the Hamburger menu at the top left. This presents the Database Info.
