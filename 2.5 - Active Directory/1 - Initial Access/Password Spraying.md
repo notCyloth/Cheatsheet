@@ -1,3 +1,13 @@
+# Initial Enumeration
+Run the following command on a target if possible:
+```batch
+net accounts
+```
+This will give two important details:
+* Lockout threshold (how many attempts before your locked out)
+* Lockout observation window (how long your locked out for)
+
+It is worth noting these values and adjusting password spraying attacks accordingly (i.e. do less password attempts than the lockout).
 # SMB Password Spraying
 Sprays user accounts with "Nexus123!" password
 ```bash
