@@ -1,4 +1,4 @@
-Using a revshell, multiple ways can be done to get a revshell - but this way's consistent.
+Using a webshell, multiple ways can be done to get a revshell - but this way's consistent.
 
 Transfer nc to target! 
 
