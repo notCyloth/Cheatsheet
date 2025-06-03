@@ -37,7 +37,7 @@ curl http://$IP_ADDRESS/sitemap.xml
 ```
 # WPScan (WordPress Enumeration)
 ```bash
-wpscan --url http://$IP_ADDRESS
+wpscan --url http://$IP_ADDRESS --enumerate p --plugins-detection aggressive -o wpscan
 ```
 ```
 <insert wpscan output here>
