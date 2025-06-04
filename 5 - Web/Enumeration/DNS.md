@@ -1,3 +1,4 @@
+# Record types
 Each domain can use different types of DNS records. Some of the most common types of DNS records include:
 * NS: Nameserver records contain the name of the authoritative servers hosting the DNS records for a domain.
 * A: Also known as a host record, the "a record" contains the IPv4 address of a hostname (such as www.megacorpone.com).
