@@ -1,4 +1,7 @@
-* dirbuster& (GUI will load but terminal will continue)
+* dirbuster
+```bash
+dirbuster&
+```
 * ffuf
 ```bash
 ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/FUZZ
