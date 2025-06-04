@@ -7,6 +7,7 @@ Each domain can use different types of DNS records. Some of the most common type
 * PTR: Pointer Records are used in reverse lookup zones and can find the records associated with an IP address.
 * CNAME: Canonical Name Records are used to create aliases for other host records.
 * TXT: Text records can contain any arbitrary data and be used for various purposes, such as domain ownership verification.
+# Enumeration
 By default, the host command searches for an A record, but we can also query other fields, such as MX or TXT records, by specifying the record type in our query using the -t option:
 ```bash
 host -t mx megacorpone.com
