@@ -6,3 +6,19 @@ By default, root user has no password, so try:
 ```bash
 mysql -u root -h $(IP_ADDRESS) --skip-ssl
 ```
+# MySQL commands
+```
+show databases;
+```
+```
+connect [DATABASE]
+```
+```
+show tables;
+```
+```
+show columns from [TABLE];
+```
+```
+describe [COLUMN];
+```
