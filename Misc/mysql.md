@@ -17,6 +17,9 @@ connect [DATABASE]
 show tables;
 ```
 ```
+select * from [TABLE];
+```
+```
 show columns from [TABLE];
 ```
 ```
