@@ -1,4 +1,8 @@
-Some exploits need to be compiled with the same version of gcc as the target to run. Here's how to install them on Kali:
+Some exploits need to be compiled with the same version of gcc as the target to run. 
+
+## Usual solution is to compile the c file on the machine using THAT compiler, but in the event that can't be done...
+
+Here's how to install them on Kali:
 
 Review the gcc versions here: https://gcc.gnu.org/releases.html
 
