@@ -15,6 +15,9 @@ reg query “HKCU\Software\OpenSSH\Agent\Key”
 reg query “HKCU\Software\SimonTatham\PuTTY\Sessions”
 ```
 ```
+regedit /e "%USERPROFILE%\Desktop\putty-sessions.reg" HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions
+```
+```
 reg query “HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon”
 ```
 ```
