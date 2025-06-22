@@ -2,12 +2,6 @@
 ```bash
 grep --color=auto -rnw '/' -ie "PASSWORD" --color=always 2>/dev/null
 ```
-```bash
-grep --color=auto -rnw '/' -ie "PASSWORD=" --color=always 2>/dev/null
-```
-```bash
-grep --color=auto -rnw '/' -ie "PASSWORD:" --color=always 2>/dev/null
-```
 # Searching for password files
 ```bash
 locate password
