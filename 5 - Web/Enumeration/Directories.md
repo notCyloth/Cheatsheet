@@ -19,4 +19,4 @@ Also remember to download any files found (exiftool the files to see who made th
 
 Other wordlists:
 * /usr/share/wfuzz/wordlist/general/megabeast.txt
-* ...
+* /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
