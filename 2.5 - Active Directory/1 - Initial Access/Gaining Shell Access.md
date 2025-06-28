@@ -31,5 +31,5 @@ evil-winrm -i 192.168.50.220 -u daveadmin -p "qwertqwertqwert123\!\!"
 ```
 # mssql-client
 ```bash
-impacket-mssqlclient $(USERNAME):'$(PASSWORD)'@$(IP_ADDRESS)
+impacket-mssqlclient $(USERNAME):'$(PASSWORD)'@$(IP_ADDRESS) -windows-auth
 ```
