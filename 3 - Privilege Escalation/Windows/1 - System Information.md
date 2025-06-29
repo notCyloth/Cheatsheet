@@ -221,3 +221,6 @@ Get-UnquotedService
 ```
 <insert output here>
 ```
+```
+Invoke-AllChecks
+```
