@@ -1,3 +1,4 @@
+https://github.com/RoqueNight/Reverse-Shell-TTY-Cheat-Sheet
 ```
 python -c 'import pty; pty.spawn("/bin/bash");'
 ```
