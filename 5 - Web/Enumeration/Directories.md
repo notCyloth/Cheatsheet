@@ -1,3 +1,7 @@
+* feroxbuster
+```bash
+feroxbuster -u http://($IP_ADDRESS) --silent --output results.txt # optional -w [WORDLIST]
+```
 * dirbuster
 ```bash
 dirbuster&
