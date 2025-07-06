@@ -29,7 +29,11 @@ Try standard SQLi checks such as -- - # //
 ### Command Injection Checks
 If there is a ', then it may form part of a statement - for example: print('INPUT'). So if INPUT=')# and it is similar to the example, then the statement will be print('')#') which is valid and the page will return content instead of 0.
 
-INPUT=':
+INPUT=abc':
 ![image](https://github.com/user-attachments/assets/250bcf49-a2c6-45db-b5bd-339990ce7b04)
 
-INPUT=')#:
+INPUT=abc')#:
+![image](https://github.com/user-attachments/assets/047e987e-6749-4fdf-9962-aa6c2b2c2a04)
+
+To demonstrate how this leads to code execution, let's try the following... INPUT=abc')%20%2b%20print('Code%20Execution%20possible!')%23%20: 
+![image](https://github.com/user-attachments/assets/13445b76-739a-421a-ac3f-bc6ea4f74a46)
