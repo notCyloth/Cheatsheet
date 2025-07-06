@@ -35,14 +35,13 @@ abc'
 ```
 ![image](https://github.com/user-attachments/assets/250bcf49-a2c6-45db-b5bd-339990ce7b04)
 
-INPUT
+INPUT:
 ```
 abc')#
 ```
 ![image](https://github.com/user-attachments/assets/047e987e-6749-4fdf-9962-aa6c2b2c2a04)
 
-To demonstrate how this leads to code execution, let's try the following... 
-INPUT
+To demonstrate how this leads to code execution, let's try the following: 
 ```
 abc')%20%2b%20print('Code%20Execution%20possible!')%23%20
 ``` 
