@@ -28,6 +28,7 @@ Try standard SQLi checks such as -- - # //
 
 ### Command Injection Checks
 If there is a ', then it may form part of a statement - for example: print('INPUT'). So if INPUT=')# and it is similar to the example, then the statement will be print('')#') which is valid and the page will return content instead of 0.
+
 INPUT=':
 ![image](https://github.com/user-attachments/assets/250bcf49-a2c6-45db-b5bd-339990ce7b04)
 
