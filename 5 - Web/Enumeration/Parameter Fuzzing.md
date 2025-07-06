@@ -2,10 +2,12 @@ Fuzzing URL Parameters can show easy ways to get code execution, sqli etc.
 
 # Example
 Take the following request:
+
 ![image](https://github.com/user-attachments/assets/414ef308-71c2-436b-bfaf-f3d8e690bc76)
 
 ## Step 1: Copy to file
 ![image](https://github.com/user-attachments/assets/dc63395b-ad89-431a-bb16-17cb4b8fcfdf)
+
 In this case, the file is saved as "search.req".
 
 ## Step 2: Add fuzz to request
