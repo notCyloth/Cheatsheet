@@ -15,5 +15,6 @@ In this case, the file is saved as "search.req".
 
 ## Step 3: ffuf
 ```bash
-ffuf -request search.req -request.proto http -w /opt/SecLists/Fuzzing/special-chars.txt 
+ffuf -request search.req -request-proto http -w /usr/share/wordlists/seclists/Fuzzing/special-chars.txt 
 ```
+-request-proto only is required for http as https is the default.
