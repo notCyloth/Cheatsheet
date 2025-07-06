@@ -11,3 +11,7 @@ This will show what was changed in the commit:
 ```bash
 git show 612ff5783cc5dbd1e0e008523dba83374a84aaf1
 ```
+Also worth checking other files in .git directory for creds (i.e. config):
+```bash
+cat .git/config
+```
