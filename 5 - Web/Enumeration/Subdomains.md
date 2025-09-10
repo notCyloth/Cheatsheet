@@ -2,6 +2,9 @@
 ```bash
 gobuster dns -d 192.168.154.199 -w /usr/share/wordlists/amass/all.txt -t 5
 ```
+```bash
+gobuster vhost -u [URL] -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain
+```
 ## AssetFinder
 Requires go to be installed.
 ```bash
