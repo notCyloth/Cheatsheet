@@ -1,5 +1,7 @@
 # Kali Logging Setup Script
 This script will set up logging in the ~/logs folder. The logs will be for every terminal and save both commands and output. It will also update the prompt to include times the commands were run.
+
+**NOTE: AS THIS SAVED OUTPUT, PASSWORDS DISPLAYED WILL ALSO BE STORED IN THESE LOGS!!!**
 ```bash
 #!/usr/bin/env bash
 
