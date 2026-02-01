@@ -56,10 +56,11 @@ export LOG_TIMESTAMP="$(date +%Y-%m-%d_%H-%M-%S)"
 # Log file per terminal session
 export LOGFILE="$LOGDIR/${TERM_NAME}_${LOG_TIMESTAMP}.log"
 
-# Start full session logging once
+# Start full session logging once (flush-safe)
 if [[ -z "$SCRIPT_RUNNING" ]]; then
   export SCRIPT_RUNNING=1
-  script -q -a "$LOGFILE"
+  script -q -f -a "$LOGFILE"
+  exit
 fi
 
 # ---- Terminal title handling (Kali override) ----
