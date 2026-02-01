@@ -9,7 +9,7 @@ ZSHRC="$HOME/.zshrc"
 LOGDIR="$HOME/logs"
 RETENTION_DAYS=5
 
-echo "[*] Setting up terminal logging, timestamps, and log rotation..."
+echo "[*] Setting up terminal logging, titles, and log retention..."
 
 # Ensure log directory exists
 mkdir -p "$LOGDIR"
@@ -31,7 +31,7 @@ cat >> "$ZSHRC" <<'EOF'
 
 # >>> TERMINAL LOGGING SETUP >>>
 
-# Directory for terminal logs
+# Log directory
 export LOGDIR="$HOME/logs"
 mkdir -p "$LOGDIR"
 
@@ -43,15 +43,12 @@ if [[ -z "$TERM_NAME" ]]; then
   echo -n "Enter terminal name (e.g. recon, web, infra): "
   read TERM_NAME
   export TERM_NAME
-
-  # Set terminal/tab title
-  printf '\033]0;%s\007' "$TERM_NAME"
 fi
 
-# Timestamp for unique log file (down to seconds)
+# Timestamp for unique log filename
 export LOG_TIMESTAMP="$(date +%Y-%m-%d_%H-%M-%S)"
 
-# Log file per terminal per session
+# Log file per terminal session
 export LOGFILE="$LOGDIR/${TERM_NAME}_${LOG_TIMESTAMP}.log"
 
 # Start full session logging once
@@ -59,6 +56,18 @@ if [[ -z "$SCRIPT_RUNNING" ]]; then
   export SCRIPT_RUNNING=1
   script -q -a "$LOGFILE"
 fi
+
+# ---- Terminal title handling (Kali override) ----
+
+# Disable Kali's default title logic
+unset precmd_functions
+
+# Force terminal/tab title on every prompt
+precmd() {
+  print -Pn "\e]0;${TERM_NAME}\a"
+}
+
+# ---- Prompt customization ----
 
 # Colored prompt with time
 PROMPT='%B%F{cyan}%D{%H:%M:%S}%f%b %F{green}%n@%m%f %F{yellow}%~%f %F{red}%#%f '
@@ -69,5 +78,4 @@ EOF
 
 echo "[+] Configuration added to .zshrc"
 echo "[*] Open a new terminal to start logging"
-
 ```
