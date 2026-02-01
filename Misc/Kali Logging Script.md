@@ -43,6 +43,9 @@ if [[ -z "$TERM_NAME" ]]; then
   echo -n "Enter terminal name (e.g. recon, web, infra): "
   read TERM_NAME
   export TERM_NAME
+
+  # Set terminal/tab title
+  printf '\033]0;%s\007' "$TERM_NAME"
 fi
 
 # Timestamp for unique log file (down to seconds)
