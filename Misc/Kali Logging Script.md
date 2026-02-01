@@ -2,6 +2,7 @@
 This script will set up logging in the ~/logs folder. The logs will be for every terminal and save both commands and output. It will also update the prompt to include times the commands were run.
 
 __**NOTE: AS THIS SAVED OUTPUT, PASSWORDS DISPLAYED WILL ALSO BE STORED IN THESE LOGS!!!**__
+
 Terminal naming scheme examples: ctfname_vpn, ctfname_recon, etc
 ```bash
 #!/usr/bin/env bash
