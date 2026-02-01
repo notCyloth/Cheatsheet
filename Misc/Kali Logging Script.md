@@ -1,5 +1,5 @@
 # Kali Setup Script
-This script will set up logging. It is NOT persistent - i.e. on reboot you'll need to run it again.
+This script will set up logging in the ~/logs folder. The logs will be for every terminal and save both commands and output. It will also update the prompt to include times the commands were run.
 ```bash
 #!/usr/bin/env bash
 
