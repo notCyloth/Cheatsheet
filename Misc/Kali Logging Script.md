@@ -84,5 +84,19 @@ PROMPT='%B%F{cyan}%D{%H:%M:%S}%f%b %F{green}%n@%m%f %F{yellow}%~%f %F{red}%#%f '
 EOF
 
 echo "[+] Configuration added to .zshrc"
+echo "[+]" Installing ligolo-ng
+sudo apt install ligolo-ng -y
+echo "[+] Adding common binaries to ~/common_bins"
+mkdir -p ~/common_bins/proxies
+mkdir -p ~/common_bins/proxies/ligolo
+cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/common_bins
+cp /usr/share/peass/winpeas/winPEASx64.exe ~/common_bins
+wget https://github.com/jpillora/chisel/releases/download/v1.11.3/chisel_1.11.3_windows_amd64.zip -q -O ~/common_bins/proxies/chisel.zip
+unzip ~/common_bins/proxies/chisel.zip -d ~/common_bins/proxies
+rm ~/common_bins/proxies/chisel.zip
+wget https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.2/ligolo-ng_agent_0.8.2_windows_amd64.zip -q -O ~/common_bins/proxies/ligolo/ligolo.zip
+unzip ~/common_bins/proxies/ligolo/ligolo.zip -d ~/common_bins/proxies/ligolo
+rm ~/common_bins/proxies/ligolo/README.md ~/common_bins/proxies/ligolo/license ~/common_bins/proxies/ligolo/ligolo.zip
+echo "[*] Binaries installed at ~/common_bins"
 echo "[*] Open a new terminal to start logging"
 ```
