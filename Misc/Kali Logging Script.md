@@ -76,6 +76,7 @@ precmd() {
 # ---- Prompt customization ----
 
 # Colored prompt with time
+export TZ="Europe/London"
 PROMPT='%B%F{cyan}%D{%H:%M:%S}%f%b %F{green}%n@%m%f %F{yellow}%~%f %F{red}%#%f '
 
 # <<< TERMINAL LOGGING SETUP <<<
