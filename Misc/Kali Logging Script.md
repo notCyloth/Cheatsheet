@@ -14,6 +14,10 @@ ZSHRC="$HOME/.zshrc"
 LOGDIR="$HOME/logs"
 RETENTION_DAYS=5
 
+# Update/Upgrade machine
+echo "[*] Updating the machine..."
+sudo apt update -y && sudo apt upgrade -y
+
 echo "[*] Setting up terminal logging, titles, and log retention..."
 
 # Ensure log directory exists
