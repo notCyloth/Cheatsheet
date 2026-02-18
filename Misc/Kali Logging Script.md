@@ -2,10 +2,7 @@
 This script will set up logging in the ~/logs folder. The logs will be for every terminal and save both commands and output. It will also update the prompt to include times the commands were run.
 ## Features to be added
 - Autoconfigure terminal to be GreenOnBlack and 0 opacity
-- Alias/link xfreerdp=xfreerdp3
-- Unzip rockyou
-- Split between Windows/Linux common_bins...
-- Change keyboard to UK
+- Install Linux ligolo-agent in ~/common_bins/proxies
 ## Important Notes
 - As the logs in ~/logs also save output - passwords displayed will be exposed in these logs.
 - Logs older than 5 days are silently deleted to make sure there isn't bloat. If you want to ensure they are safe - move/copy them before then!
@@ -94,20 +91,51 @@ PROMPT='%B%F{cyan}%D{%H:%M:%S}%f%b %F{green}%n@%m%f %F{yellow}%~%f %F{red}%#%f '
 EOF
 
 echo "[+] Configuration added to .zshrc"
+
+echo "[+] Changing keyboard to UK"
+setxkbmap gb
+
 echo "[+]" Installing ligolo-ng
 sudo apt install ligolo-ng -y
+
+echo "[+] Linking 'xfreerdp' to 'xfreerdp3'"
+sudo ln -s /usr/bin/xfreerdp3 /usr/local/bin/xfreerdp
+
+echo "[+] Installing cherrymap"
+sudo git clone https://github.com/sergiodmn/cherrymap.git /usr/local/bin/cherrymap_dir
+sudo ln -s /usr/local/bin/cherrymap_dir/cherrymap.py /usr/local/bin/cherrymap
+sudo rm -rf /usr/local/bin/cherrymap_dir/example /usr/local/bin/cherrymap_dir/README.md
+
+echo "[+] Unzipping /usr/share/wordlists/rockyou.txt.gz"
+sudo gunzip /usr/share/wordlists/rockyou.txt.gz /usr/share/wordlists/rockyou.txt
+
 echo "[+] Adding common binaries to ~/common_bins"
-mkdir -p ~/common_bins/proxies
+mkdir -p ~/common_bins/proxies/windows
+mkdir -p ~/common_bins/proxies/linux
 mkdir -p ~/common_bins/proxies/ligolo
-cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/common_bins
-cp /usr/share/peass/winpeas/winPEASx64.exe ~/common_bins
+
+echo "[*] Copying mimikatz to ~/common_bins/windows"
+cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/common_bins/windows
+
+echo "[*] Copying winpeas to ~/common_bins/windows"
+cp /usr/share/peass/winpeas/winPEASx64.exe ~/common_bins/windows
+
+echo "[*] Copying linpeas to ~/common_bins/linux"
+cp /usr/share/peass/linpeas/linpeas.sh ~/common_bins/linux
+
+echo "[*] Downloading chisel to ~/common_bins/proxies"
 wget https://github.com/jpillora/chisel/releases/download/v1.11.3/chisel_1.11.3_windows_amd64.zip -q -O ~/common_bins/proxies/chisel.zip
 unzip ~/common_bins/proxies/chisel.zip -d ~/common_bins/proxies
 rm ~/common_bins/proxies/chisel.zip
+
+echo "[*] Downloading ligolo agents (windows and linux) to ~/common_bins/proxies"
 wget https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.2/ligolo-ng_agent_0.8.2_windows_amd64.zip -q -O ~/common_bins/proxies/ligolo/ligolo.zip
 unzip ~/common_bins/proxies/ligolo/ligolo.zip -d ~/common_bins/proxies/ligolo
 rm ~/common_bins/proxies/ligolo/README.md ~/common_bins/proxies/ligolo/LICENSE ~/common_bins/proxies/ligolo/ligolo.zip
-wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe -q -O ~/common_bins/PrintSpoofer.exe
+
+echo "[*] Downloading PrintSpoofer.exe to ~/common_bins/windows"
+wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe -q -O ~/common_bins/windows/PrintSpoofer.exe
 echo "[*] Binaries installed at ~/common_bins"
+
 echo "[*] Open a new terminal to start logging"
 ```
