@@ -4,7 +4,7 @@ This script will set up logging in the ~/logs folder. The logs will be for every
 - Autoconfigure terminal to be GreenOnBlack and 0 opacity
 - Alias/link xfreerdp=xfreerdp3
 - Unzip rockyou
-- Split between windows/Linux common_bins...
+- Split between Windows/Linux common_bins...
 - Change keyboard to UK
 ## Important Notes
 - As the logs in ~/logs also save output - passwords displayed will be exposed in these logs.
