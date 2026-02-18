@@ -96,7 +96,7 @@ unzip ~/common_bins/proxies/chisel.zip -d ~/common_bins/proxies
 rm ~/common_bins/proxies/chisel.zip
 wget https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.2/ligolo-ng_agent_0.8.2_windows_amd64.zip -q -O ~/common_bins/proxies/ligolo/ligolo.zip
 unzip ~/common_bins/proxies/ligolo/ligolo.zip -d ~/common_bins/proxies/ligolo
-rm ~/common_bins/proxies/ligolo/README.md ~/common_bins/proxies/ligolo/license ~/common_bins/proxies/ligolo/ligolo.zip
+rm ~/common_bins/proxies/ligolo/README.md ~/common_bins/proxies/ligolo/LICENSE ~/common_bins/proxies/ligolo/ligolo.zip
 wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe -q -O ~/common_bins/PrintSpoofer.exe
 echo "[*] Binaries installed at ~/common_bins"
 echo "[*] Open a new terminal to start logging"
