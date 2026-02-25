@@ -4,7 +4,7 @@ This script will set up logging in the ~/logs folder. The logs will be for every
 - Autoconfigure terminal to be GreenOnBlack and 0 opacity
 - Install Linux ligolo-agent in ~/common_bins/proxies
 - JuicyPotatoNG, GodPotato etc.
-- 
+- Install remmina
 ## Important Notes
 - As the logs in ~/logs also save output - passwords displayed will be exposed in these logs.
 - Logs older than 5 days are silently deleted to make sure there isn't bloat. If you want to ensure they are safe - move/copy them before then!
