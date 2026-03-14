@@ -117,13 +117,13 @@ mkdir -p ~/common_bins/proxies/linux
 mkdir -p ~/common_bins/proxies/ligolo
 
 echo "[*] Copying mimikatz to ~/common_bins/windows"
-cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/common_bins/windows
+cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/common_bins/windows/
 
 echo "[*] Copying winpeas to ~/common_bins/windows"
-cp /usr/share/peass/winpeas/winPEASx64.exe ~/common_bins/windows
+cp /usr/share/peass/winpeas/winPEASx64.exe ~/common_bins/windows/
 
 echo "[*] Copying linpeas to ~/common_bins/linux"
-cp /usr/share/peass/linpeas/linpeas.sh ~/common_bins/linux
+cp /usr/share/peass/linpeas/linpeas.sh ~/common_bins/linux/
 
 echo "[*] Downloading chisel to ~/common_bins/proxies"
 wget https://github.com/jpillora/chisel/releases/download/v1.11.3/chisel_1.11.3_windows_amd64.zip -q -O ~/common_bins/proxies/chisel.zip
