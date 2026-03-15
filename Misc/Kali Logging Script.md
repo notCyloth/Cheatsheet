@@ -21,6 +21,7 @@ RETENTION_DAYS=5
 
 # Update/Upgrade machine
 echo "[*] Updating the machine..."
+sudo apt install open-vm-tools-desktop fuse -y
 sudo apt update -y && sudo apt upgrade -y
 
 echo "[*] Setting up terminal logging, titles, and log retention..."
