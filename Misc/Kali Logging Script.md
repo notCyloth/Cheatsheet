@@ -113,8 +113,8 @@ echo "[+] Unzipping /usr/share/wordlists/rockyou.txt.gz"
 sudo gunzip /usr/share/wordlists/rockyou.txt.gz /usr/share/wordlists/rockyou.txt
 
 echo "[+] Adding common binaries to ~/common_bins"
-mkdir -p ~/common_bins/proxies/windows/
-mkdir -p ~/common_bins/proxies/linux/
+mkdir -p ~/common_bins/windows/
+mkdir -p ~/common_bins/linux/
 mkdir -p ~/common_bins/proxies/ligolo/
 
 echo "[*] Copying mimikatz to ~/common_bins/windows"
