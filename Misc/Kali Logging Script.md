@@ -118,7 +118,7 @@ mkdir -p ~/common_bins/linux/
 mkdir -p ~/common_bins/proxies/ligolo/
 
 echo "[*] Copying mimikatz to ~/common_bins/windows"
-cp /usr/share/windows-resources/mimikatz/Win32/mimikatz.exe ~/common_bins/windows/mimikatz.exe
+cp /usr/share/windows-resources/mimikatz/x64/mimikatz.exe ~/common_bins/windows/mimikatz.exe
 
 echo "[*] Copying winpeas to ~/common_bins/windows"
 cp /usr/share/peass/winpeas/winPEASx64.exe ~/common_bins/windows/winpeas.exe
