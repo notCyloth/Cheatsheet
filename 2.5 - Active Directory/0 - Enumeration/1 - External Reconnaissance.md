@@ -34,6 +34,7 @@ Check against the domain found or known domains such as 8.8.8.8.
 - https://www.domaintools.com/
 - http://ptrarchive.com/
 - https://lookup.icann.org/lookup
+- https://viewdns.info/
 ## Social Media
 - LinkedIn
 - Twitter
