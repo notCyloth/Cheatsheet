@@ -35,6 +35,7 @@ Check against the domain found or known domains such as 8.8.8.8.
 - http://ptrarchive.com/
 - https://lookup.icann.org/lookup
 - https://viewdns.info/
+- https://mxtoolbox.com/DNSLookup.aspx
 ## Social Media
 - LinkedIn, Indeed, Glassdoor
 Look for technical job postings for the company. i.e. IT Administrator might show the technologies used in the job experience/expected competencies. 
