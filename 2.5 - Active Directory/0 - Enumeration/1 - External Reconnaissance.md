@@ -36,17 +36,19 @@ Check against the domain found or known domains such as 8.8.8.8.
 - https://lookup.icann.org/lookup
 - https://viewdns.info/
 ## Social Media
-- LinkedIn
-- Twitter
-- Facebook
+- LinkedIn, Indeed, Glassdoor
+Look for technical job postings for the company. i.e. IT Administrator might show the technologies used in the job experience/expected competencies. 
+- Twitter, Facebook
 - News
 ## Company Websites
+Internal links, contacts, phone numbers, org charts, etc can have 
 - Internal News Articles
 - About Us section
 - Contact Us
 ## Cloud/Dev Storage Spaces
 - https://github.com/
 - https://grayhatwarfare.com/
+- https://github.com/trufflesecurity/truffleHog
 - https://www.exploit-db.com/google-hacking-database
 ## Breached Data
 - https://haveibeenpwned.com/
