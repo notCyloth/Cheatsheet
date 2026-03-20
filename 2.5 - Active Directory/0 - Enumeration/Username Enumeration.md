@@ -1,3 +1,4 @@
+Good username list: https://github.com/insidetrust/statistically-likely-usernames
 # lookupsid
 ```bash
 impacket-lookupsid cicada.htb/guest:''@10.10.11.35
