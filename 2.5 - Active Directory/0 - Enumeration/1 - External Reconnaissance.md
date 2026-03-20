@@ -25,6 +25,7 @@ For usernames, passwords, etc.
 Americas:
 - https://www.iana.org/
 - https://www.arin.net/
+
 Europe:
 - https://www.ripe.net/
 - https://bgp.he.net/
