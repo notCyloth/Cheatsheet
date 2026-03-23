@@ -9,8 +9,15 @@ This will give two important details:
 
 It is worth noting these values and adjusting password spraying attacks accordingly (i.e. do less password attempts than the lockout).
 ## Use nxc to grab Password Policy
-```
+```bash
 nxc smb $(IP_ADDRESS) -u $(USERNAME) -p $(PASSWORD) --pass-pol
+```
+## Use SMB Null Session
+```bash
+rpclient -U "" -N $(IP_ADDRESS)
+```
+```bash
+querydompwinfo
 ```
 # SMB Password Spraying
 Sprays user accounts with "Nexus123!" password
