@@ -49,3 +49,7 @@ List specific chares content:
 ```bash
 smbclient -L \\\\$(IP_ADDRESS)\\$SHARE
 ```
+## rpclient
+```bash
+rpcclient -U "" -N $(IP_ADDRESS)
+```
