@@ -24,5 +24,3 @@ sudo responder -I eth0 -dwP
 -P : ProxyAuth - Force Authentication prompt
 
 -v : verbose 
-
-For some reason the command didn't like -P and -w togther, so I removed -P, not sure on this one..
