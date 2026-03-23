@@ -19,6 +19,29 @@ rpclient -U "" -N $(IP_ADDRESS)
 ```bash
 querydompwinfo
 ```
+### Obtain valid list of usernames via rpcclient
+```bash
+enumdomusers
+```
+### Obtain list of valid usernames via enum4linux
+```bash
+enum4linux -U $(IP_ADDRESS) | grep "user:" | cut -f2 -d"[" | cut -f1 -d"]"
+```
+### Obtain list of valid usernames via NetExec
+```bash
+nxc smb $(IP_ADDRESS) --users
+```
+## Use Anonymous LDAP Access
+### Obtain list of valid usernames via ldapsearch
+In this command, it's attacking IP 1.2.3.4 on domain.local
+```bash
+ldapsearch -h 1.2.3.4 -x -b "DC=domain,DC=local" -s sub "(&(objectclass=user))" | grep sAMAccountName: | cut -f2 -d " " 
+```
+### Obtain list of valid usernames via windapsearch
+In this command, it's attacking IP 1.2.3.4 on domain.local
+```bash
+./windapsearch.py --dc-ip 1.2.3.4 -u "" -U
+```
 # SMB Password Spraying
 Sprays user accounts with "Nexus123!" password
 ```bash
