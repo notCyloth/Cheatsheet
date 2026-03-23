@@ -8,6 +8,10 @@ This will give two important details:
 * Lockout observation window (how long your locked out for)
 
 It is worth noting these values and adjusting password spraying attacks accordingly (i.e. do less password attempts than the lockout).
+## Use nxc to grab Password Policy
+```
+nxc smb $(IP_ADDRESS) -u $(USERNAME) -p $(PASSWORD) --pass-pol
+```
 # SMB Password Spraying
 Sprays user accounts with "Nexus123!" password
 ```bash
