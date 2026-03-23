@@ -42,3 +42,8 @@ Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y
 ```
 You can also press Esc to enter the Inveigh console while it is running.
 HELP command will give options.
+
+## Cracking Hashes
+```
+hashcat -m 5600 ntlmv2_hash.txt /usr/share/wordlists/rockyou.txt
+```
