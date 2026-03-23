@@ -33,7 +33,7 @@ use auxiliary/scanner/smb/smb_version
 ## enum4linux
 This will apply all enumeration options:
 ```bash
-enum4linux -a ($IP_ADDRESS)
+enum4linux-ng -a ($IP_ADDRESS) -oA output
 ```
 How to loop enum4linux for multiple IP's...
 ```bash
