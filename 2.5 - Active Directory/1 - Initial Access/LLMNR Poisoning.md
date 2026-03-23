@@ -18,8 +18,11 @@ sudo responder -I eth0 -dwP
 ```
 
 -d : dhcp requests
+
 -w : wpad rouge proxy server. 
--P : ProxyAuth - Force Authentication 
+
+-P : ProxyAuth - Force Authentication prompt
+
 -v : verbose 
 
 For some reason the command didn't like -P and -w togther, so I removed -P, not sure on this one..
