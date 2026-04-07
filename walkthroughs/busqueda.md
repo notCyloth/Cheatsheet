@@ -63,9 +63,9 @@ Bingo! We have some creds and a new domain.
 ```
 cody / jh1usoih2bkjaspwe92
 ```
-and the subdomain 
+and the subdomain...
 ```
-gitea.searcher.htb.
+gitea.searcher.htb
 ```
 After attempting and failing to authenticate as cody with the creds, I add the new subdomain to /etc/hosts and access it:
 ```bash
