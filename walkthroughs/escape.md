@@ -82,3 +82,55 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 106.56 seconds
 ```
+With the associated domains, I add it to my /etc/hosts:
+```
+echo "10.129.228.253"  sequel.htb | sudo tee -a /etc/hosts
+```
+```
+echo "10.129.228.253"  dc.sequel.htb | sudo tee -a /etc/hosts
+```
+Judging from the nmap scan, there is little to look at aside from mssql, port 5985 for possible webpage, and ldap. Without creds, mssql is no use - so let's try port 5985:
+
+<img width="606" height="247" alt="{F74939CF-2B9C-4022-907B-EC5C43DE537B}" src="https://github.com/user-attachments/assets/5600c4b2-657c-41de-b5e7-aefb5734c1be" />
+
+Unfortunate. Let's try some ldap. Anonymous ldap?:
+```
+netexec ldap dc.sequel.htb -u '' -p '' --query "(objectClass=*)" ""
+```
+Hmm, it errors out:
+```
+0004DC: LdapErr: DSID-0C090A5C, comment: In order to perform this operation a successful bind must be completed on the connection., data 0, v4563
+```
+Let's try check SMB. Usually we can check shares or null sessions. Let's start with shares:
+```
+smbclient -L \\\\10.129.228.253\\
+```
+
+```
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share 
+        Public          Disk      
+        SYSVOL          Disk      Logon server share 
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.129.228.253 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+```
+I can see the Public share here, so let's list it:
+```
+smbclient \\\\10.129.228.253\\Public
+```
+```
+Password for [WORKGROUP\kali]:
+Try "help" to get a list of possible commands.
+smb: \> dir
+#  .                                   D        0  Sat Nov 19 06:51:25 2022
+  ..                                  D        0  Sat Nov 19 06:51:25 2022
+  SQL Server Procedures.pdf           A    49551  Fri Nov 18 08:39:43 2022
+
+                5184255 blocks of size 4096. 1467125 blocks available
+```
+Aha, lovely pdf. Let's get that and see whats inside..
