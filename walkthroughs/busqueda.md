@@ -31,22 +31,27 @@ echo "10.129.24.234  searcher.htb" | sudo tee -a /etc/hosts
 ```
 
 I visit the webpage to be greeted with the following:
+
 <img width="1170" height="755" alt="{EE502638-5AE2-4A5F-9F5D-7CD375AA578B}" src="https://github.com/user-attachments/assets/d7afb655-054a-4bc3-8111-f3f1dfd4d968" />
 
 The first thing I notice is the "Searchor 2.4.0" and search for exploits, which finds me the following:
 https://github.com/nexis-nexis/Searchor-2.4.0-POC-Exploit-
 
 I adapt the POC to the request made for this searchor instance by doing the following:
+
 <img width="610" height="284" alt="{5AB59924-A65D-43D6-94D3-FC66FB2D709D}" src="https://github.com/user-attachments/assets/9b0987e2-511e-4fae-8ab4-00b6e8510182" />
 
 This works and I'm able to catch a shell!
+
 <img width="516" height="187" alt="{3E98FF07-7608-4E8A-8E41-38BF0984EB1D}" src="https://github.com/user-attachments/assets/c61934c1-2daa-4654-9225-8355dded700b" />
 
 With this svc user I am able to obtain the user flag. Now for priv esc...
 
 When I list what's in the directory I land in I get the following:
+
 <img width="487" height="136" alt="{FA33313D-2732-43B4-92BC-7F3D53A38221}" src="https://github.com/user-attachments/assets/b9cdffe4-7b95-4d68-8bb4-7d5ac04d7c67" />
 
 .git! Always worth checking commits...
+
 <img width="571" height="192" alt="{D99A4BAA-53F6-4E02-A249-7A833B7878DD}" src="https://github.com/user-attachments/assets/31ccb691-fb91-45fb-8cf5-6fd5875adf63" />
 
