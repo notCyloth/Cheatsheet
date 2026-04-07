@@ -60,9 +60,13 @@ The commit didn't have anything sensitive... What about config?
 <img width="719" height="194" alt="{32750D11-37A0-4907-95C9-A1ECE1A9D87A}" src="https://github.com/user-attachments/assets/b29ffbc6-cf44-4a3c-bd35-b333ffeba4ab" />
 
 Bingo! We have some creds and a new domain.
-
-cody / jh1usoih2bkjaspwe92 and the subdomain gitea.searcher.htb.
-
+```
+cody / jh1usoih2bkjaspwe92
+```
+and the subdomain 
+```
+gitea.searcher.htb.
+```
 After attempting and failing to authenticate as cody with the creds, I add the new subdomain to /etc/hosts and access it:
 ```bash
 echo "10.129.24.234  gitea.searcher.htb" | sudo tee -a /etc/hosts
