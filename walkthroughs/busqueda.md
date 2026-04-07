@@ -55,3 +55,18 @@ When I list what's in the directory I land in I get the following:
 
 <img width="571" height="192" alt="{D99A4BAA-53F6-4E02-A249-7A833B7878DD}" src="https://github.com/user-attachments/assets/31ccb691-fb91-45fb-8cf5-6fd5875adf63" />
 
+The commit didn't have anything sensitive... What about config?
+
+<img width="719" height="194" alt="{32750D11-37A0-4907-95C9-A1ECE1A9D87A}" src="https://github.com/user-attachments/assets/b29ffbc6-cf44-4a3c-bd35-b333ffeba4ab" />
+
+Bingo! We have some creds and a new domain.
+
+cody / jh1usoih2bkjaspwe92 and the subdomain gitea.searcher.htb.
+
+After attempting and failing to authenticate as cody with the creds, I add the new subdomain to /etc/hosts and access it:
+```bash
+echo "10.129.24.234  gitea.searcher.htb" | sudo tee -a /etc/hosts
+```
+<img width="1761" height="444" alt="{17B811AE-5D6A-4C3F-A164-815ECF0ED3FA}" src="https://github.com/user-attachments/assets/3ecec907-8a9a-4966-ac70-32508d451f2c" />
+
+A nice gitea instance, where I can sign in as cody. Let's see what we can look at...
