@@ -52,7 +52,6 @@ echo "[*] Feeding aggressiveTCP to searchsploit..."
 searchsploit --nmap $1/nmap/aggressiveTCP/aggressiveTCP.xml > $1/searchsploit/searchsploit.results
 echo "[!] Searchsploit finished. Results at: $(pwd)/$1/searchsploit/searchsploitTCP.results"
 
-
 # START SLOWALLPORT SCAN
 echo "[*] Starting slowallport scan."
 nmap -p- $1 -oA $1/nmap/slowallport/slowallport -Pn -n >/dev/null
