@@ -8,7 +8,7 @@ dirbuster&
 ```
 * ffuf
 ```bash
-ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/FUZZ -recursion-depth 1
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/FUZZ -recursion -recursive-depth=1
 ```
 * dirb
 * gobuster
@@ -38,6 +38,6 @@ Identfy the server type based on HTTP response headers. For example:
 ```
 ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/indexFUZZ -mc 200
 ```
-Once an extension is found, pages can be bruteforced with the -e 'extension' i.e. -e php, so the wordlist will check the words with and without the extension.
+Once an extension is found, pages can be bruteforced with the -e 'extension' i.e. -e .php, so the wordlist will check the words with and without the extension.
 ## Check source code of page
 RIgt click and check the source code of a page to see if it shows you the webpage extension.
