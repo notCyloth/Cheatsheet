@@ -2,6 +2,14 @@
 ```bash
 ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.website.com/
 ```
+### vhosts
+```bash
+ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://website.com:PORT/ -H 'Host: FUZZ.website.com'
+```
+This will ALL return 200's but the request size will be different for a successful hit. Thus we take the size of any one of the failed hits and filter it out in the next command:
+```bash
+ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://website.com:PORT/ -H 'Host: FUZZ.website.com' -fs [RESPONSE SIZE TO FILTER OUT]
+```
 
 ## gobuster
 ```bash
