@@ -39,3 +39,5 @@ Identfy the server type based on HTTP response headers. For example:
 ffuf -w /opt/useful/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/indexFUZZ -mc 200
 ```
 Once the correct filetype (i.e. response 200)
+## Check source code of page
+RIgt click and check the source code of a page to see if it shows you the webpage extension.
