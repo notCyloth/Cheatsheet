@@ -1,14 +1,23 @@
 Fuzzing URL Parameters can show easy ways to get code execution, sqli etc.
 
 # Fuzzing to find unknown parameter names
+## GET requests
 ```
 ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.com:PORT/page.php?FUZZ=key
 ```
 Get the regular size of a failed parameter from the reqs, then filter them out...
 ```
-ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.copm:PORT/page.php?FUZZ=key -fs [RESPONSE REQUEST SIZE TO FILTER OUT]
+ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.com:PORT/page.php?FUZZ=key -fs [RESPONSE REQUEST SIZE TO FILTER OUT]
 ```
-
+## POST requests
+PHP needs to use application/x-www-form-urlencoded header. Other technology stacks might need other headers.
+```
+ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.com:PORT/page.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded'
+```
+Get the regular size of a failed parameter from the reqs, then filter them out...
+```
+ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.com:PORT/page.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs [RESPONSE REQUEST SIZE TO FILTER OUT]
+```
 # Fuzzing parameter values
 Take the following request:
 
