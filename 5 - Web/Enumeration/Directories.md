@@ -8,7 +8,7 @@ dirbuster&
 ```
 * ffuf
 ```bash
-ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/FUZZ -recursion -recursive-depth=1
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/FUZZ -recursion -recursion-depth=1
 ```
 * dirb
 * gobuster
