@@ -9,7 +9,7 @@ Get the regular size of a failed parameter from the reqs, then filter them out..
 ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.copm:PORT/page.php?FUZZ=key -fs [RESPONSE REQUEST SIZE TO FILTER OUT]
 ```
 
-# Example
+# Fuzzing parameter values
 Take the following request:
 
 ![image](https://github.com/user-attachments/assets/414ef308-71c2-436b-bfaf-f3d8e690bc76)
