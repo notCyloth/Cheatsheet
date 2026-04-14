@@ -1,3 +1,8 @@
+## ffuf
+```bash
+ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.website.com/
+```
+
 ## gobuster
 ```bash
 gobuster dns -d 192.168.154.199 -w /usr/share/wordlists/amass/all.txt -t 5
