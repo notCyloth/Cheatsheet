@@ -24,3 +24,18 @@ Also remember to download any files found (exiftool the files to see who made th
 Other wordlists:
 * /usr/share/wfuzz/wordlist/general/megabeast.txt
 * /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+
+# Extension Fuzzing
+Remember to check for pages with extensions like .aspx, .php etc...
+## Identify Server Type
+Identfy the server type based on HTTP response headers. For example: 
+#### apache
+- .php
+#### IIS
+- .asp
+- .aspx
+## Brute force index page
+```
+ffuf -w /opt/useful/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/indexFUZZ -mc 200
+```
+Once the correct filetype (i.e. response 200)
