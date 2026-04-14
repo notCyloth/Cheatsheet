@@ -1,5 +1,14 @@
 Fuzzing URL Parameters can show easy ways to get code execution, sqli etc.
 
+# Regular ffuf fuzzing
+```
+ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.com:PORT/page.php?FUZZ=key
+```
+Get the regular size of a failed parameter from the reqs, then filter them out...
+```
+ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.copm:PORT/page.php?FUZZ=key -fs [RESPONSE REQUEST SIZE TO FILTER OUT]
+```
+
 # Example
 Take the following request:
 
