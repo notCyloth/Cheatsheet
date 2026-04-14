@@ -36,7 +36,7 @@ Identfy the server type based on HTTP response headers. For example:
 - .aspx
 ## Brute force index page
 ```
-ffuf -w /opt/useful/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/indexFUZZ -mc 200
+ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://$(IP_ADDRESS):$(PORT)/indexFUZZ -mc 200
 ```
 Once the correct filetype (i.e. response 200)
 ## Check source code of page
