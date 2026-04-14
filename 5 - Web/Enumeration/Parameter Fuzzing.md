@@ -1,6 +1,6 @@
 Fuzzing URL Parameters can show easy ways to get code execution, sqli etc.
 
-# Regular ffuf fuzzing
+# Fuzzing to find unknown parameter names
 ```
 ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://target.com:PORT/page.php?FUZZ=key
 ```
